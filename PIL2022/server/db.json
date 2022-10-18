@@ -1,0 +1,30 @@
+{
+    "users": [
+      {
+        "email": "hola@hola.com",
+        "password": "213213",
+        "id": 1
+      },
+      {
+        "email": "hola@hola.com",
+        "password": "213213",
+        "id": 1
+      }
+    ],
+    "crypto": [
+      {
+        "name": "bitcoint",
+        "value": 3000,
+        "idCrypto": "btc"
+      }
+    ],
+    "movimientos": [
+      {
+        "monto": 3000,
+        "fecha": "18/10/22",
+        "moneda": "pesos",
+        "tipo": "retiro",
+        "email": "mateo@mateo.com"
+      }
+    ]
+  }
