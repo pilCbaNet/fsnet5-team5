@@ -8,15 +8,15 @@
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
-    <div class="col-3">
-      <p>Usuario: Usuario PIL </p>
+    <div class="col-3" *ngIf="usuario !== null ">
+      <p>Usuario: {{usuario}}</p>
     </div>
-    <div class="col-3">
-      <button type="button" class="btn btn-info">Cerrar Sesión</button>
+    <div class="col-3" *ngIf="usuario !== null ">
+      <button type="button" class="btn btn-info" (click)="cerrarSesion()">Cerrar Sesión</button>
     </div>
   </div>
 </nav>
-<nav class="navbar navbar-expand-lg" style="background-color: rgb(15, 23, 39);;">
+<nav class="navbar navbar-expand-lg" style="background-color: rgb(15, 23, 39);;" *ngIf="usuario !== null ">
   <div class="container-fluid row">
     <div class="col"></div>
     <div class="col"></div>

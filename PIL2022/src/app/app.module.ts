@@ -15,11 +15,11 @@ import { RetiroComponent } from './componentes/landing/componentes-landing/retir
 import { CotizacionComponent } from './componentes/landing/componentes-landing/cotizacion/cotizacion.component';
 import { LandingComponent } from './componentes/landing/landing.component';
 import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-
     DepositoComponent,
     NavbarComponent,
     MibilleteraComponent,
@@ -36,7 +36,9 @@ import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
+  token: any =  localStorage.getItem("tokenPrueba") || null;
+
   constructor() { }
 
   ngOnInit(): void {

@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  usuario: any =  localStorage.getItem("tokenPrueba") || null;
+
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  cerrarSesion():void{
+    localStorage.removeItem("tokenPrueba");
+    location.reload();
+  }
+
 
 }
