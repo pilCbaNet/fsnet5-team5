@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { AppRoutingModule } from './app-routing.module.ts/app-routing.module.ts.module';
 import { AppComponent } from './app.component';
 import { DepositoComponent } from './componentes/deposito/deposito.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
@@ -11,6 +11,7 @@ import { UltimosmovimientosComponent } from './componentes/ultimosmovimientos/ul
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { RetiroComponent } from './componentes/retiro/retiro.component';
 import { CotizacionComponent } from './componentes/cotizacion/cotizacion.component';
+import { LandingComponent } from './componentes/landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +26,12 @@ import { CotizacionComponent } from './componentes/cotizacion/cotizacion.compone
     RegistroComponent,
     RetiroComponent,
     CotizacionComponent,
+    LandingComponent,
 
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
