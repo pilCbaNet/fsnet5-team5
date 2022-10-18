@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module.ts/app-routing.module.ts.module';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { DepositoComponent } from './componentes/landing/componentes-landing/deposito/deposito.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
@@ -34,6 +36,7 @@ import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
