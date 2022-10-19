@@ -1,11 +1,11 @@
 export default class LoginClass{
 
-    Email: string = ""
-    Password: string = ""
+    email: string = ""
+    password: string = ""
 
    constructor(Email: string, Password: string){
-       this.Email = Email;
-       this.Password = Password;
+       this.email = Email;
+       this.password = Password;
    }
 
 }
