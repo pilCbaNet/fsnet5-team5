@@ -16,6 +16,7 @@ import { CotizacionComponent } from './componentes/landing/componentes-landing/c
 import { LandingComponent } from './componentes/landing/landing.component';
 import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MovimientosComponent } from './componentes/movimientos/movimientos.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     CotizacionComponent,
     LandingComponent,
     AcercaDeComponent,
+    MovimientosComponent,
 
   ],
   imports: [
