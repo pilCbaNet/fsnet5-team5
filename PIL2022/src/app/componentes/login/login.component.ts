@@ -10,6 +10,9 @@ import { LoginServiceService } from './service/login-service.service';
 export class LoginComponent implements OnInit {
   form: FormGroup;
 
+  titulo: string = 'Iniciar Sesion';
+  estado: boolean = false;
+
   users: any[] = [];
 
   constructor(private fb: FormBuilder, private service: LoginServiceService) {
@@ -27,23 +30,41 @@ export class LoginComponent implements OnInit {
     let email: string = this.form.get('Email')?.value;
     let Password: string = this.form.get('Password')?.value;
 
-    // let log: LoginClass = new LoginClass(email, Password);
+    if (this.titulo === 'Iniciar Sesion') {
+      let name = this.users.filter((data) => email === data.email);
 
-    // this.service.login(log).subscribe((data) => {
-    //   this.form.reset();
-    //   localStorage.setItem('tokenPrueba', data.Email);
-    //   location.reload();
-    // });
+      if (name.length !== 0) {
+        this.form.reset();
+        localStorage.setItem('tokenPrueba', email);
+        location.reload();
+      } else {
+        alert('si queres entrar ingresa admin@admin.com');
+      }
+    } else {
+      let name = this.users.filter((data) => email === data.email);
+      if(name.length === 0){
+        let log: LoginClass = new LoginClass(email, Password);
 
-    let name = this.users.filter((data) => email === data.email);
-
-    if (name.length !== 0) {
-      this.form.reset();
-      localStorage.setItem('tokenPrueba', email);
-      location.reload();
-    }else{
-      alert("si queres entrar ingresa admin@admin.com")
+        this.service.login(log).subscribe((data) => {
+          this.form.reset();
+          localStorage.setItem('tokenPrueba', email);
+          location.reload();
+        });
+      }else{
+        alert('Ya existe el usuario ' + email );
+      }
+     
     }
+  }
+
+  cambioRegistrarse(): void {
+    this.titulo = 'Registrarse';
+    this.estado = true;
+  }
+
+  cambioLogin(): void {
+    this.titulo = 'Iniciar Sesion';
+    this.estado = false;
   }
 
   getUsers(): void {

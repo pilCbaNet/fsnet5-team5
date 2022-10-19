@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  token: any =  localStorage.getItem("tokenPrueba") || null;
+
+
   constructor() { }
 
   ngOnInit(): void {
