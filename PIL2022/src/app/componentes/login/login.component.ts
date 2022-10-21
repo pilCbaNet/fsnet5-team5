@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
     } else {
       let name = this.users.filter((data) => email === data.email);
       if(name.length === 0){
-        let log: LoginClass = new LoginClass(email, Password);
+        let log: LoginClass = new LoginClass(email, Password, 0 , []);
 
         this.service.login(log).subscribe((data) => {
           this.form.reset();

@@ -1,30 +1,64 @@
 {
   "users": [
     {
+      "id": 1,
       "email": "admin@admin.com",
       "password": "admin",
-      "id": 1
+      "monto": 3000,
+      "movimientos": [
+        {
+          "monto": 3000,
+          "fecha": "18/10/22",
+          "hora": "12:10:05",
+          "moneda": "pesos",
+          "tipo": "retiro",
+          "email": "admin@admin.com"
+        },
+        {
+          "monto": 2000,
+          "fecha": "18/10/22",
+          "hora": "09:12:10",
+          "moneda": "pesos",
+          "tipo": "deposito",
+          "email": "admin@admin.com"
+        }
+      ]
+    }
+  ],
+  "cryptos": [
+    {
+      "id": "bitcoin",
+      "icon": "https://static.coinstats.app/coins/1650455588819.png",
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "price": 19178.76320453004,
+      "priceBtc": 1
     },
     {
-      "email": "hola@hola.com",
-      "password": "213213",
-      "id": 2
-    }
-  ],
-  "crypto": [
+      "id": "ethereum",
+      "icon": "https://static.coinstats.app/coins/1650455629727.png",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "price": 1302.836424445388,
+      "priceBtc": 0.06793069412087159
+    },
     {
-      "name": "bitcoint",
-      "value": 3000,
-      "idCrypto": "btc"
-    }
-  ],
-  "movimientos": [
+      "id": "tether",
+      "icon": "https://static.coinstats.app/coins/1650455771843.png",
+      "name": "Tether",
+      "symbol": "USDT",
+      "rank": 3,
+      "price": 1.0042484740448598,
+      "priceBtc": 0.00005231423044726275
+    },
     {
-      "monto": 3000,
-      "fecha": "18/10/22",
-      "moneda": "pesos",
-      "tipo": "retiro",
-      "email": "mateo@mateo.com"
+      "id": "dogecoin",
+      "icon": "https://static.coinstats.app/coins/DogecoinIZai5.png",
+      "name": "Dogecoin",
+      "symbol": "DOGE",
+      "rank": 10,
+      "price": 0.05925187959611188,
+      "priceBtc": 0.0000030866031303384366
     }
   ]
 }
