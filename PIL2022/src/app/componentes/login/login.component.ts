@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
 
     if (this.titulo === 'Iniciar Sesion') {
       let name = this.users.filter((data) => email === data.email);
-
+      
       if (name.length !== 0) {
         this.form.reset();
         localStorage.setItem('tokenPrueba', email);
