@@ -1,35 +1,40 @@
-<div class="card border-success" style="margin-left: 15%; background-color:rgb(20, 40, 80);">
+<section>
+  <div class="card border-success" style="background-color: #023e8a">
     <div class="card-header border-success">
-        <i class="fa fa-solid fa-list"></i> Ultimos Movimientos
+      <i class="fa fa-list" style="color: #fff"></i>
     </div>
     <div class="card-body">
-        <h5 class="card-title">Mis Ultimos Movimientos</h5>
-        <p class="card-text">
-        <table class="table border-success text-white" >
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Hora</th>
-                    <th scope="col">Moneda</th>
-                    <th scope="col">Tipo</th>
-                    <th scope="col">Monto</th>
-                    <th scope="col">Saldo</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let movimiento of userActual.movimientos">
-                    <th scope="row"></th>
-                    <td>{{movimiento.fecha}}</td>
-                    <td>{{movimiento.hora}}</td>
-                    <td>{{movimiento.moneda}}</td>                   
-                    <td>{{movimiento.tipo}}</td> 
-                    <td>{{movimiento.monto}}</td>
-                    <td ></td>
-            
-                    
-                </tr>            
-            </tbody>
-        </table>
+      <h5
+        class="card-title text-center text-white"
+        style="padding-bottom: 1rem"
+      >
+        Todos mis movimientos
+      </h5>
+      <p class="card-text"></p>
+      <table class="table border-success text-white">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Hora</th>
+            <th scope="col">Moneda</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Monto</th>
+            <th scope="col">Saldo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let movimiento of userActual.movimientos">
+            <th scope="row"></th>
+            <td>{{ movimiento.fecha }}</td>
+            <td>{{ movimiento.hora }}</td>
+            <td>{{ movimiento.moneda }}</td>
+            <td>{{ movimiento.tipo }}</td>
+            <td>{{ movimiento.monto }}</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-</div>
+  </div>
+</section>
