@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module.ts/app-routing.module.ts.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { DepositoComponent } from './componentes/landing/componentes-landing/deposito/deposito.component';
@@ -39,8 +40,8 @@ import { MovimientosComponent } from './componentes/movimientos/movimientos.comp
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
-
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

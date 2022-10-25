@@ -4,19 +4,9 @@
             <div class="card-header bg-transparent border-success text-white">Cotizaciones</div>
             <div class="card-body text-success">
                 <h5 class="card-title">Actualidad</h5>
-<<<<<<< HEAD
-                <div class="">
-                    <div class="shadow-sm p-3 my-1 bg-body rounded">
-                    </div>
-                </div>
-                <div class="shadow-sm p-3 mb-1 bg-body rounded">BitCoin
-                </div>
-                <div class="shadow-sm p-3 mb-1 bg-body rounded">ethereum</div>
-=======
                 <div class="shadow-sm p-3 my-1 rounded crypto text-white" *ngFor="let c of cotizaciones">
                     <img src="{{c.icon}}" class="img-thumbnail" alt="...">{{c.name}} - {{c.price|currency}}
                 </div>
->>>>>>> ddbaf6f3b0bebaa56e198fefe22449bc0c7ea8b4
             </div>
             <div class="card-footer bg-transparent border-success"></div>
         </div>
