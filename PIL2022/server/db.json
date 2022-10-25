@@ -4,7 +4,7 @@
       "id": 1,
       "email": "admin@admin.com",
       "password": "admin",
-      "monto": 6400,
+      "monto": 6800,
       "movimientos": [
         {
           "monto": 3000,
@@ -26,6 +26,14 @@
           "monto": 1000,
           "fecha": "25/9/2022",
           "hora": "17:10:2",
+          "moneda": "pesos",
+          "tipo": "deposito",
+          "email": "admin@admin.com"
+        },
+        {
+          "monto": 400,
+          "fecha": "25/9/2022",
+          "hora": "17:21:46",
           "moneda": "pesos",
           "tipo": "deposito",
           "email": "admin@admin.com"
@@ -69,14 +77,15 @@
       "priceBtc": 0.0000030866031303384366
     }
   ],
-  "quienes-somos":[
+  "quienes-somos": [
     {
       "nombre": "Mateo DellAcqua",
-      "linkedin":"https://www.linkedin.com/in/mateo-dellacqua-castro/",
-      "github":"https://github.com/teodc888",
-      "instagram":"https://www.instagram.com/teodellacqua8/",
-      "mail":"teodellacqua8@gmail.com",
-      "imagen":"https://avatars.githubusercontent.com/u/29457718?v=4"
+      "linkedin": "https://www.linkedin.com/in/mateo-dellacqua-castro/",
+      "github": "https://github.com/teodc888",
+      "instagram": "https://www.instagram.com/teodellacqua8/",
+      "mail": "teodellacqua8@gmail.com",
+      "imagen": "https://avatars.githubusercontent.com/u/29457718?v=4"
     }
+   
   ]
 }

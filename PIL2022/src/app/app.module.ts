@@ -10,7 +10,6 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { MibilleteraComponent } from './componentes/landing/componentes-landing/mibilletera/mibilletera.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { LoginComponent } from './componentes/login/login.component';
-import { UltimosmovimientosComponent } from './componentes/landing/componentes-landing/ultimosmovimientos/ultimosmovimientos.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { RetiroComponent } from './componentes/landing/componentes-landing/retiro/retiro.component';
 import { CotizacionComponent } from './componentes/landing/componentes-landing/cotizacion/cotizacion.component';
@@ -18,6 +17,7 @@ import { LandingComponent } from './componentes/landing/landing.component';
 import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MovimientosComponent } from './componentes/movimientos/movimientos.component';
+import { QuienesSomosComponent } from './componentes/quienes-somos/quienes-somos.component';
 
 @NgModule({
   declarations: [
@@ -27,13 +27,13 @@ import { MovimientosComponent } from './componentes/movimientos/movimientos.comp
     MibilleteraComponent,
     FooterComponent,
     LoginComponent,
-    UltimosmovimientosComponent,
     RegistroComponent,
     RetiroComponent,
     CotizacionComponent,
     LandingComponent,
     AcercaDeComponent,
     MovimientosComponent,
+    QuienesSomosComponent
 
   ],
   imports: [
