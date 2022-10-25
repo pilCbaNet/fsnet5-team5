@@ -12,7 +12,7 @@ getUsers():Observable<any>{
   return this.http.get(this.url + "/users");
 }
 
-putMonto(usuarioActual: any):Observable<any>{
+putUsers(usuarioActual: any):Observable<any>{
   return this.http.put(this.url + "/users/" + usuarioActual.id, usuarioActual);
 }
 }

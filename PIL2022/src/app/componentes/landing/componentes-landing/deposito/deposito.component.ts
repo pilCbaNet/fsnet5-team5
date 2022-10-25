@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as historyApiFallback from 'connect-history-api-fallback';
 import { DepositoService } from './deposito.service';
 @Component({
   selector: 'app-deposito',
@@ -12,6 +13,7 @@ export class DepositoComponent implements OnInit {
   usuario: any =  localStorage.getItem("tokenPrueba") || null;
   users: any[] = [];
   userActual: any; 
+  movimiento: object = {};
 
   constructor(private service: DepositoService) { }
 
@@ -27,8 +29,9 @@ export class DepositoComponent implements OnInit {
   }
   depositar() {
     this.userActual.monto += this.monto;
+    this.agregarMovimiento();
     try{
-      this.service.putMonto(this.userActual).subscribe((data) => {
+      this.service.putUsers(this.userActual).subscribe((data) => {
         this.isLoading = false;
         this.response = true;
         location.reload();
@@ -37,6 +40,20 @@ export class DepositoComponent implements OnInit {
       this.isLoading = false;
       this.response = false;
     }
+  }
+  agregarMovimiento() {
+    const date = new Date();
+    const fecha = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
+    const hora = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+    
+    this.movimiento = { "monto": this.monto,
+    "fecha" : fecha,
+    "hora" : hora,
+    "moneda" : "pesos",
+    "tipo" : "deposito",
+    "email" : this.userActual.email
+    }
+    this.userActual.movimientos.push(this.movimiento);
   }
   deshabilitado(): boolean {
     if (this.monto <= 0){
