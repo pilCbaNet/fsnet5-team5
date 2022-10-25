@@ -1,0 +1,15 @@
+.row {
+  width: 75%;
+  margin: 0 12.5%;
+}
+.btn {
+  background-color: rgb(34, 65, 128);
+  border-color: rgb(20, 40, 80);
+}
+@media (max-width: 992px) {
+  .buttonDiv{
+    width: 75%;
+    margin: 0 12.5%;
+    text-align: center;
+  }
+}

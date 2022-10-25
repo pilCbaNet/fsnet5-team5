@@ -1,1 +1,21 @@
-<p>deposito works!</p>
+<h1 class="text-center my-3">Depositar</h1>
+<h4 class="text-center mt-3">Ingrese el monto a depositar en su cuenta</h4>
+<div class="grid">
+<div class="row">
+  <div class="col-12 col-lg-9">
+    <div class="input-group mb-3">
+      <span class="input-group-text">AR$</span>
+      <input type="text" [(ngModel)]="monto" class="form-control" aria-label="Amount (to the nearest dollar)">
+    </div>
+  </div>
+  <div class="col-12 col-lg-3 buttonDiv">
+    <button type="button" class="btn btn-primary">Depositar</button>
+  </div>
+</div>
+<div *ngIf="response === true && isLoading === false" class="alert alert-success" role="alert">
+  hola  
+</div>
+<div *ngIf="response === false && isLoading === false" class="alert alert-danger" role="alert">
+  hola  
+</div>
+</div>
