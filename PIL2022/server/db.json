@@ -4,7 +4,7 @@
       "id": 1,
       "email": "admin@admin.com",
       "password": "admin",
-      "monto": 3000,
+      "monto": 4300,
       "movimientos": [
         {
           "monto": 3000,
