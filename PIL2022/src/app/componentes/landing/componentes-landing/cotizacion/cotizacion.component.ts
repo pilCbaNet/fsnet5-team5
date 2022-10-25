@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CotizacionService } from './cotizacion.service';
 
 @Component({
   selector: 'app-cotizacion',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CotizacionComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private service: CotizacionService) { }
+  cotizaciones: any[] = [];
   ngOnInit(): void {
+    this.getCotizaciones();
+  }
+
+  getCotizaciones(): void{
+    this.service.getCotizacion().subscribe((data) => {
+      this.cotizaciones = data;
+      console.log(this.cotizaciones)
+    })
   }
 
 }
