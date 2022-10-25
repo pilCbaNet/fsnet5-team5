@@ -60,5 +60,15 @@
       "price": 0.05925187959611188,
       "priceBtc": 0.0000030866031303384366
     }
+  ],
+  "quienes-somos":[
+    {
+      "nombre": "Mateo DellAcqua",
+      "linkedin":"https://www.linkedin.com/in/mateo-dellacqua-castro/",
+      "github":"https://github.com/teodc888",
+      "instagram":"https://www.instagram.com/teodellacqua8/",
+      "mail":"teodellacqua8@gmail.com",
+      "imagen":"https://avatars.githubusercontent.com/u/29457718?v=4"
+    }
   ]
 }

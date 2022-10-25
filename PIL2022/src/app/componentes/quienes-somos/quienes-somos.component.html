@@ -1,11 +1,33 @@
-<div class="container-fluid">
-    <div class="jumbotron">
-        <div class="card">
-            <h5 class="card-header text-center">Nuestro equipo</h5>
-            <div class="card-body">
-                <div class="card" style="width: 18rem; border-radius: 100%;">
-                    <img src="./assets/css-3.png" class="card-img-top" alt="imagen integrante 1">
-            </div>  
+<div class="row row-cols-1 row-cols-md-3 g-4" *ngFor="let dev of developers">
+  <div class="col">
+    <div class="card">
+      <img
+        src="{{ dev.imagen }}"
+        class="card-img-top"
+        alt="Hollywood Sign on The Hill"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ dev.nombre }}</h5>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              <a class="btn btn-primary" href="{{ dev.instagram }}">
+                instagram</a
+              >
+            </div>
+            <div class="col">
+              <a class="btn btn-primary" href="{{ dev.linkedin }}">
+                linkedin</a
+              >
+            </div>
+            <div class="col">
+              <a class="btn btn-primary" href="{{ dev.github }}">
+                github</a
+              >
+            </div>
           </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
