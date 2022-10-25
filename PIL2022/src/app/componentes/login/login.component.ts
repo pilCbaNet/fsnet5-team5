@@ -17,9 +17,19 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private service: LoginServiceService) {
     this.form = this.fb.group({
-      Email: ['', Validators.required],
+      email: ['', Validators.required, Validators.email],
       Password: ['', Validators.required],
     });
+  }
+
+  get email()
+  {
+    return this.form.get('email');
+  }
+
+  get Password()
+  {
+    return this.form.get('Password');
   }
 
   ngOnInit(): void {
@@ -27,7 +37,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    let email: string = this.form.get('Email')?.value;
+    let email: string = this.form.get('email')?.value;
     let Password: string = this.form.get('Password')?.value;
 
     if (this.titulo === 'Iniciar Sesion') {
@@ -39,6 +49,7 @@ export class LoginComponent implements OnInit {
         location.reload();
       } else {
         alert('si queres entrar ingresa admin@admin.com');
+        this.form.markAllAsTouched();
       }
     } else {
       let name = this.users.filter((data) => email === data.email);

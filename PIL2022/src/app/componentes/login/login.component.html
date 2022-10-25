@@ -43,8 +43,12 @@
                   id="form3Example3"
                   class="form-control form-control-lg"
                   placeholder="Email..."
-                  formControlName="Email"
+                  formControlName="email"
                 />
+                <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="text-danger">
+                  <div *ngIf="email?.errors?.['required']"> El email es requerido </div>
+                  <div *ngIf="email?.errors?.['email']"> El formato del email no es valido </div>
+                </div>
               </div>
   
               <!-- Password input -->
@@ -56,6 +60,9 @@
                   placeholder="Contraseña..."
                   formControlName="Password"
                 />
+                <div *ngIf="Password?.invalid && (Password?.dirty || Password?.touched)" class="text-danger">
+                  <div *ngIf="Password?.errors?.['required']"> La contraseña es requerida </div>
+                </div>
               </div>
   
             <div class="d-flex justify-content-between align-items-center" *ngIf="estado === false">
