@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Route } from '@angular/router';
+import { QuienesSomosService } from './services/quienes-somos.service';
 
 @Component({
   selector: 'app-quienes-somos',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuienesSomosComponent implements OnInit {
 
-  constructor() { }
+  developers: any[] = [];
+
+  hola :string = ""
+
+  constructor(private services: QuienesSomosService) { }
 
   ngOnInit(): void {
+    this.getQuienesSomos()
+  }
+
+  getQuienesSomos(): void{
+    this.services.getQuienesSomos().subscribe(
+      (data) => this.developers = data,
+      (error)=> console.log(error)
+    )
   }
 
 }
