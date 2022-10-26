@@ -1,1 +1,14 @@
-<p>retiro works!</p>
+<h4 class="text-center mt-3 text-white">Ingrese el monto a retirar en su cuenta</h4>
+<div class="grid">
+<div class="row">
+  <div class="col-12 col-lg-9">
+    <div class="input-group mb-3">
+      <span class="input-group-text">AR$</span>
+      <input type="number" [(ngModel)]="monto" class="form-control" aria-label="Amount (to the nearest dollar)" min="0">
+    </div>
+  </div>
+  <div class="col-12 col-lg-3 buttonDiv">
+    <button type="button" (click)="retirar()" class="btn btn-primary" [disabled]="!deshabilitado()">Retirar</button>
+  </div>
+</div>
+</div>
