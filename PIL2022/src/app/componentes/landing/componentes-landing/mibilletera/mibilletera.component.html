@@ -5,7 +5,7 @@
             <div class="card-body text-success row">
                 <h5 class="card-title col-12">Fondos de mi billetera</h5>
                 <p class="card-text col-3">Pesos:</p>
-                <h5 class="text-center col-5">{{userActual.monto|currency}}</h5>
+                <h5 class="text-center col-5">{{userActual && userActual.monto|currency}}</h5>
             </div>
             <div class="card-footer bg-transparent border-success"></div>
         </div>

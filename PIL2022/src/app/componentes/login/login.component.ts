@@ -85,16 +85,7 @@ export class LoginComponent implements OnInit {
   getUsers(): void {
     this.service.getUsers().subscribe((data) => {
       this.users = data;
-      console.log(this.users);
     });
   }
 
-  validarMail(): void{
-    let email: string = this.form.get('email')?.value;
-    if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(email)){
-      console.log("correcto")
-    }else{
-      console.log("incorrecto")
-    }
-  }
 }

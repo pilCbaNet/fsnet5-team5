@@ -17,7 +17,6 @@ export class CotizacionComponent implements OnInit {
   getCotizaciones(): void{
     this.service.getCotizacion().subscribe((data) => {
       this.cotizaciones = data;
-      console.log(this.cotizaciones)
     })
   }
 

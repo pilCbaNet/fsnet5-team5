@@ -4,18 +4,18 @@ import { RetiroService } from './retiro.service';
 @Component({
   selector: 'app-retiro',
   templateUrl: './retiro.component.html',
-  styleUrls: ['./retiro.component.css']
+  styleUrls: ['./retiro.component.css'],
 })
 export class RetiroComponent implements OnInit {
   response: boolean = false;
   isLoading: boolean = true;
   monto: number = 0;
-  usuario: any = localStorage.getItem("tokenPrueba") || null;
+  usuario: any = localStorage.getItem('tokenPrueba') || null;
   users: any[] = [];
   userActual: any;
   movimiento: object = {};
 
-  constructor(private service: RetiroService) { }
+  constructor(private service: RetiroService) {}
 
   ngOnInit(): void {
     this.getUsers();
@@ -24,7 +24,6 @@ export class RetiroComponent implements OnInit {
     this.service.getUsers().subscribe((data) => {
       this.users = data;
       this.userActual = this.users.find((data) => this.usuario === data.email);
-      console.log(this.userActual)
     });
   }
   retirar() {
@@ -47,18 +46,20 @@ export class RetiroComponent implements OnInit {
     const hora = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
 
     this.movimiento = {
-      "monto": this.monto,
-      "fecha": fecha,
-      "hora": hora,
-      "moneda": "pesos",
-      "tipo": "retiro",
-      "email": this.userActual.email
-    }
+      monto: this.monto,
+      fecha: fecha,
+      hora: hora,
+      moneda: 'pesos',
+      tipo: 'retiro',
+      email: this.userActual.email,
+    };
     this.userActual.movimientos.push(this.movimiento);
   }
   deshabilitado(): boolean {
-    if (this.monto > this.userActual.monto || this.monto <= 0) {
-      return false;
+    if (this.userActual) {
+      if (this.monto > this.userActual.monto || this.monto <= 0) {
+        return false;
+      }
     }
     return true;
   }

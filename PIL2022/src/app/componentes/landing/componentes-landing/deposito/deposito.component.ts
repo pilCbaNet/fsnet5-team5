@@ -24,7 +24,6 @@ export class DepositoComponent implements OnInit {
     this.service.getUsers().subscribe((data) => {
       this.users = data;
       this.userActual = this.users.find((data) => this.usuario === data.email);
-      console.log(this.userActual)
     });
   }
   depositar() {
@@ -54,6 +53,7 @@ export class DepositoComponent implements OnInit {
     "email" : this.userActual.email
     }
     this.userActual.movimientos.push(this.movimiento);
+
   }
   deshabilitado(): boolean {
     if (this.monto <= 0){

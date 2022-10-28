@@ -22,7 +22,6 @@ export class MibilleteraComponent implements OnInit {
     this.service.getMonto().subscribe((data) => {
       this.users = data;
       this.userActual = this.users.find((data) => this.usuario === data.email);
-      console.log(this.userActual)
     });
   }
 

@@ -24,7 +24,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let movimiento of userActual.movimientos">
+          <tr *ngFor="let movimiento of userActual && userActual.movimientos">
             <th scope="row"></th>
             <td>{{ movimiento.fecha }}</td>
             <td>{{ movimiento.hora }}</td>
