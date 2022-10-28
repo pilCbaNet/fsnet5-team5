@@ -13,6 +13,9 @@ export class MovimientosComponent implements OnInit {
   userActual: any; 
   montoFinal: any; 
   idMontoFinal: any = 0;
+
+  retiro: string = "retiro";
+
   ngOnInit(): void {
     this.getUsers();
   }
