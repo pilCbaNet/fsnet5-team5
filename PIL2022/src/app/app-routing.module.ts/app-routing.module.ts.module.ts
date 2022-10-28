@@ -4,14 +4,16 @@ import { AcercaDeComponent } from '../componentes/acerca-de/acerca-de.component'
 import { LandingComponent } from '../componentes/landing/landing.component';
 import { QuienesSomosComponent } from '../componentes/quienes-somos/quienes-somos.component';
 import { MovimientosComponent } from '../componentes/movimientos/movimientos.component';
+import { HomeComponent } from '../componentes/home/home.component';
 
 const routes: Routes = [
+  {path: '', component: HomeComponent},
   {path: 'home', component: LandingComponent},
   {path: 'quienes-somos', component: QuienesSomosComponent},
   {path: 'acerca-de', component: AcercaDeComponent},
   {path: 'movimientos', component: MovimientosComponent},
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: '**', redirectTo: '/home', pathMatch: 'full'},
+  {path: '', redirectTo: '/', pathMatch: 'full'},
+  {path: '**', redirectTo: '/', pathMatch: 'full'},
 ]
 
 @NgModule({

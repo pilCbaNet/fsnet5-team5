@@ -18,6 +18,7 @@ import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MovimientosComponent } from './componentes/movimientos/movimientos.component';
 import { QuienesSomosComponent } from './componentes/quienes-somos/quienes-somos.component';
+import { HomeComponent } from './componentes/home/home.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { QuienesSomosComponent } from './componentes/quienes-somos/quienes-somos
     LandingComponent,
     AcercaDeComponent,
     MovimientosComponent,
-    QuienesSomosComponent
+    QuienesSomosComponent,
+    HomeComponent
 
   ],
   imports: [

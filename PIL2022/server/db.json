@@ -123,7 +123,32 @@
       "linkedin": "https://www.linkedin.com/in/mariela-nabia-developer/",
       "github": "https://github.com/Meripip",
       "mail": "meripip100@gmail.com",
-      "imagen": "https://avatars.githubusercontent.com/u/84877042?v=4"
+      "imagen": "https://avatars.githubusercontent.com/u/84877042?v=4",
+      "instagram": "https://www.instagram.com/"
+    },
+    {
+      "nombre": "Ezequiel Eandi Lussi",
+      "linkedin": "www.linkedin.com/in/ezequiel-eandi-lussi-77b942208",
+      "github": "https://github.com/ezequieleandi",
+      "mail": "eandiezequiel@gmail.com",
+      "imagen": "https://avatars.githubusercontent.com/u/95190539?v=4",
+      "instagram": "https://www.instagram.com/"
+    },
+    {
+      "nombre": "Maria Pia Merlo",
+      "linkedin": "https://www.linkedin.com/in/maria-pia-merlo-300359244/",
+      "github": "https://github.com/mariap99",
+      "mail": "maria99merlo@gmail.com",
+      "imagen": "https://media-exp1.licdn.com/dms/image/C4D03AQGpg6VOPcjiGg/profile-displayphoto-shrink_800_800/0/1656905832389?e=1672272000&v=beta&t=U00sZ-8dKv1YYSnHXVo9G9ne4CzeAC92KQSsUo7F_-I",
+      "instagram": "https://www.instagram.com/"
+    },
+    {
+      "nombre": "Joaquín Ludueña",
+      "linkedin": "",
+      "github": "https://github.com/luduenaj",
+      "mail": "luduenajoa3@gmail.com",
+      "imagen": "https://avatars.githubusercontent.com/u/95331506?v=4",
+      "instagram": "https://www.instagram.com/"
     }
   ]
 }

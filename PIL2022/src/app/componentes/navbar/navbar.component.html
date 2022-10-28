@@ -1,14 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
   <div class="container">
-    <a class="navbar-brand me-2">
-      <img
-        src="https://media1.giphy.com/media/PyXzWtAcWKGyiwelJP/giphy.gif?cid=ecf05e47egcng6jo47u2r3j6ubhf01a79agh9ddbfklo9zyt&rid=giphy.gif&ct=s"
-        height="40"
-        alt="MDB Logo"
-        loading="lazy"
-        style="margin-top: -1px"
-      />
-    </a>
     <button
       class="navbar-toggler"
       type="button"
@@ -18,12 +9,43 @@
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
-      <i class="fas fa-bars"></i>
+      <button
+        type="button"
+        class="btn btn-primary me-3"
+        style="background-color: rgb(15, 23, 39)"
+        (click)="cerrarSesion()"
+        *ngIf="usuario !== null"
+      >
+        Cerrar Sesion
+      </button>
     </button>
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="#" style="color: white">CryptoPil</a>
+        <li class="nav-item" *ngIf="usuario !== null">
+          <a class="nav-link" style="color: white">
+            <a class="navbar-brand me-2">
+              <img
+                src="https://media1.giphy.com/media/PyXzWtAcWKGyiwelJP/giphy.gif?cid=ecf05e47egcng6jo47u2r3j6ubhf01a79agh9ddbfklo9zyt&rid=giphy.gif&ct=s"
+                height="40"
+                alt="MDB Logo"
+                loading="lazy"
+                style="margin-top: -1px"
+              /> </a
+            >CryptoPil</a
+          >
+        </li>
+        <li class="nav-item" routerLink="/home" *ngIf="usuario === null">
+          <a class="nav-link" href="#" style="color: white">
+            <a class="navbar-brand me-2">
+              <img
+                src="https://media1.giphy.com/media/PyXzWtAcWKGyiwelJP/giphy.gif?cid=ecf05e47egcng6jo47u2r3j6ubhf01a79agh9ddbfklo9zyt&rid=giphy.gif&ct=s"
+                height="40"
+                alt="MDB Logo"
+                loading="lazy"
+                style="margin-top: -1px"
+              /> </a
+            >CryptoPil</a
+          >
         </li>
       </ul>
       <div class="d-flex align-items-center">
