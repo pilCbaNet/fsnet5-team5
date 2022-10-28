@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private service: LoginServiceService) {
     this.form = this.fb.group({
-      email: ['', Validators.required, Validators.email],
+      email: ['', [Validators.required, Validators.email,Validators.pattern('/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/')]],
       Password: ['', Validators.required],
     });
   }
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
     if (this.titulo === 'Iniciar Sesion') {
       let name = this.users.filter((data) => email === data.email);
       
-      if (name.length !== 0) {
+      if (name.length !== 0 && Password.length !== 0) {
         this.form.reset();
         localStorage.setItem('tokenPrueba', email);
         location.reload();
@@ -54,6 +54,7 @@ export class LoginComponent implements OnInit {
     } else {
       let name = this.users.filter((data) => email === data.email);
       if(name.length === 0){
+        if (email.length !== 0 && Password.length !== 0  ) {
         let log: LoginClass = new LoginClass(email, Password, 0 , []);
 
         this.service.login(log).subscribe((data) => {
@@ -61,6 +62,9 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('tokenPrueba', email);
           location.reload();
         });
+      }else{
+        alert('Complete los campos correctamente');
+      }
       }else{
         alert('Ya existe el usuario ' + email );
       }
@@ -83,5 +87,14 @@ export class LoginComponent implements OnInit {
       this.users = data;
       console.log(this.users);
     });
+  }
+
+  validarMail(): void{
+    let email: string = this.form.get('email')?.value;
+    if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(email)){
+      console.log("correcto")
+    }else{
+      console.log("incorrecto")
+    }
   }
 }
