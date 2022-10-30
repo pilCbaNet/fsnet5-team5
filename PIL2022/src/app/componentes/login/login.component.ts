@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('tokenPrueba', email);
         location.reload();
       } else {
-        alert('si queres entrar ingresa admin@admin.com');
+        alert('Usuario o Password incorrecto');
         this.form.markAllAsTouched();
       }
     } else {
