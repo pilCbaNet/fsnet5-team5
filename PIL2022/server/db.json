@@ -1,0 +1,172 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@admin.com",
+      "password": "admin",
+      "monto": 800,
+      "movimientos": [
+        {
+          "monto": 3000,
+          "fecha": "18/10/22",
+          "hora": "12:10:05",
+          "moneda": "pesos",
+          "tipo": "retiro",
+          "email": "admin@admin.com"
+        },
+        {
+          "monto": 2000,
+          "fecha": "18/10/22",
+          "hora": "09:12:10",
+          "moneda": "pesos",
+          "tipo": "deposito",
+          "email": "admin@admin.com"
+        },
+        {
+          "monto": 1000,
+          "fecha": "25/9/2022",
+          "hora": "17:10:2",
+          "moneda": "pesos",
+          "tipo": "deposito",
+          "email": "admin@admin.com"
+        },
+        {
+          "monto": 400,
+          "fecha": "25/9/2022",
+          "hora": "17:21:46",
+          "moneda": "pesos",
+          "tipo": "deposito",
+          "email": "admin@admin.com"
+        },
+        {
+          "monto": 800,
+          "fecha": "26/9/2022",
+          "hora": "17:35:16",
+          "moneda": "pesos",
+          "tipo": "retiro",
+          "email": "admin@admin.com"
+        },
+        {
+          "monto": 500,
+          "fecha": "26/9/2022",
+          "hora": "17:42:31",
+          "moneda": "pesos",
+          "tipo": "retiro",
+          "email": "admin@admin.com"
+        },
+        {
+          "monto": 5500,
+          "fecha": "26/9/2022",
+          "hora": "17:45:34",
+          "moneda": "pesos",
+          "tipo": "retiro",
+          "email": "admin@admin.com"
+        },
+        {
+          "monto": 800,
+          "fecha": "28/9/2022",
+          "hora": "11:42:28",
+          "moneda": "pesos",
+          "tipo": "deposito",
+          "email": "admin@admin.com"
+        }
+      ]
+    }
+  ],
+  "cryptos": [
+    {
+      "id": "bitcoin",
+      "icon": "https://static.coinstats.app/coins/1650455588819.png",
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "price": 19178.76320453004,
+      "priceBtc": 1
+    },
+    {
+      "id": "ethereum",
+      "icon": "https://static.coinstats.app/coins/1650455629727.png",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "price": 1302.836424445388,
+      "priceBtc": 0.06793069412087159
+    },
+    {
+      "id": "tether",
+      "icon": "https://static.coinstats.app/coins/1650455771843.png",
+      "name": "Tether",
+      "symbol": "USDT",
+      "rank": 3,
+      "price": 1.0042484740448598,
+      "priceBtc": 0.00005231423044726275
+    },
+    {
+      "id": "dogecoin",
+      "icon": "https://static.coinstats.app/coins/DogecoinIZai5.png",
+      "name": "Dogecoin",
+      "symbol": "DOGE",
+      "rank": 10,
+      "price": 0.05925187959611188,
+      "priceBtc": 0.0000030866031303384366
+    }
+  ],
+  "quienes-somos": [
+    {
+      "nombre": "Mateo DellAcqua",
+      "linkedin": "https://www.linkedin.com/in/mateo-dellacqua-castro/",
+      "github": "https://github.com/teodc888",
+      "instagram": "https://www.instagram.com/teodellacqua8/",
+      "mail": "teodellacqua8@gmail.com",
+      "imagen": "https://avatars.githubusercontent.com/u/29457718?v=4"
+    },
+    {
+      "nombre": "Mariela Nabia",
+      "linkedin": "https://www.linkedin.com/in/mariela-nabia-developer/",
+      "github": "https://github.com/Meripip",
+      "mail": "meripip100@gmail.com",
+      "imagen": "https://avatars.githubusercontent.com/u/84877042?v=4",
+      "instagram": "https://www.instagram.com/"
+    },
+    {
+      "nombre": "Ezequiel Eandi Lussi",
+      "linkedin": "www.linkedin.com/in/ezequiel-eandi-lussi-77b942208",
+      "github": "https://github.com/ezequieleandi",
+      "mail": "eandiezequiel@gmail.com",
+      "imagen": "https://avatars.githubusercontent.com/u/95190539?v=4",
+      "instagram": "https://www.instagram.com/"
+    },
+    {
+      "nombre": "Maria Pia Merlo",
+      "linkedin": "https://www.linkedin.com/in/maria-pia-merlo-300359244/",
+      "github": "https://github.com/mariap99",
+      "mail": "maria99merlo@gmail.com",
+      "imagen": "https://media-exp1.licdn.com/dms/image/C4D03AQGpg6VOPcjiGg/profile-displayphoto-shrink_800_800/0/1656905832389?e=1672272000&v=beta&t=U00sZ-8dKv1YYSnHXVo9G9ne4CzeAC92KQSsUo7F_-I",
+      "instagram": "https://www.instagram.com/"
+    },
+    {
+      "nombre": "Joaquín Ludueña",
+      "linkedin": "",
+      "github": "https://github.com/luduenaj",
+      "mail": "luduenajoa3@gmail.com",
+      "imagen": "https://avatars.githubusercontent.com/u/95331506?v=4",
+      "instagram": "https://www.instagram.com/ositxz/"
+    },
+    {
+      "nombre": "Jacobo Isaac Vocos",
+      "linkedin":"https://www.linkedin.com/in/jacobo-isaac-vocos-304a0721b/",
+      "github": "https://github.com/Jeicob12",
+      "mail": "vocosjacoboisaac@gmail.com",
+      "imagen": "https://avatars.githubusercontent.com/u/104158426?v=4",
+      "instagram": "https://www.instagram.com/jacovocos/"
+    },
+    {
+      "nombre": "Santiago Fontal",
+      "linkedin":"https://www.linkedin.com/in/santiago-fontal-b90302223/",
+      "github": "https://github.com/FontalSantiago",
+      "mail": "fontalsantiago@gmail.com",
+      "imagen": "./assets/Mifoto.jpg",
+      "instagram": "https://www.instagram.com/santiago_fontal/"
+    }
+
+
+  ]
+}
