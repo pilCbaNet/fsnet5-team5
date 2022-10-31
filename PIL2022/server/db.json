@@ -152,7 +152,7 @@
     },
     {
       "nombre": "Jacobo Isaac Vocos",
-      "linkedin":"https://www.linkedin.com/in/jacobo-isaac-vocos-304a0721b/",
+      "linkedin": "https://www.linkedin.com/in/jacobo-isaac-vocos-304a0721b/",
       "github": "https://github.com/Jeicob12",
       "mail": "vocosjacoboisaac@gmail.com",
       "imagen": "https://avatars.githubusercontent.com/u/104158426?v=4",
@@ -160,13 +160,35 @@
     },
     {
       "nombre": "Santiago Fontal",
-      "linkedin":"https://www.linkedin.com/in/santiago-fontal-b90302223/",
+      "linkedin": "https://www.linkedin.com/in/santiago-fontal-b90302223/",
       "github": "https://github.com/FontalSantiago",
       "mail": "fontalsantiago@gmail.com",
       "imagen": "./assets/Mifoto.jpg",
       "instagram": "https://www.instagram.com/santiago_fontal/"
+    },
+    {
+      "nombre": "Antonio Toledo",
+      "linkedin": "https://www.linkedin.com/in/toledoantonio/",
+      "github": "https://github.com/toledoantonio",
+      "mail": "antonioramont7@gmail.com",
+      "imagen": "https://avatars.githubusercontent.com/u/77376188?v=4",
+      "instagram": "https://www.instagram.com/"
+    },
+    {
+      "nombre": "Agustin Demoli",
+      "linkedin": "https://www.linkedin.com/in/ignacio-agustin-demoli/",
+      "github": "https://github.com/AgusDemoli",
+      "mail": "agustindemoli@gmail.com",
+      "imagen": "https://avatars.githubusercontent.com/u/73559324?v=4",
+      "instagram": "https://www.instagram.com/"
+    },
+    {
+      "nombre": "Santiago Alfredo Bruno",
+      "linkedin": "https://www.linkedin.com/in/santiago-bruno-7b450524b/",
+      "github": "https://github.com/SanBru12",
+      "mail": "santiagobruno870@gmail.com",
+      "imagen": "https://avatars.githubusercontent.com/u/102236831?v=4",
+      "instagram": "https://www.instagram.com/"
     }
-
-
   ]
 }
