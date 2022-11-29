@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kh912imJnat9K7LqCL9m7abNJ964uN2iBHERLKhYUCjQ1CLIkSeg+bd7srrbfyl+5WGQx0/Lw5dRfK7Z+Eg41Q==",
+  "dgSpecHash": "l4RW2C7nYiz4EcsGi56Q5wEY2ZcDtoPqmEwOGnjSwKsaEsnRhWZbp4CF6HG5HhVyB6Ly1C2x8FM81sFk71upbg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jacob\\Desktop\\MiBilletera\\MiBilleteraWebApi\\MiBilleteraWebApi.csproj",
+  "projectFilePath": "C:\\Users\\Jacob\\Desktop\\RepoPil\\fsnet5-team5\\BackBilletera\\MiBilleteraWebApi\\MiBilleteraWebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jacob\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Jacob\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

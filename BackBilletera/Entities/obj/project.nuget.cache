@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kmc2jZRzAWbGGSLpDvHjbj21ymo6tLbmcg0Dma/YR3KgD/lf8/d4oYtfltZBbMEO87siNQg5Ikw+wW98UIAmTA==",
+  "dgSpecHash": "HyAH+j4X0TTn4nB2oeR+LweY8xWK94Wio8ivZ0AimZqveGh8c2Jjp8tusKV+U5VtoClT+qJv2Vvmsbd7Ad8/+g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jacob\\Desktop\\MiBilletera\\Entities\\Entities.csproj",
+  "projectFilePath": "C:\\Users\\Jacob\\Desktop\\RepoPil\\fsnet5-team5\\BackBilletera\\Entities\\Entities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jacob\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Jacob\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
