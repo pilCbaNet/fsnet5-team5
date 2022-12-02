@@ -7,8 +7,6 @@ namespace MiBilleteraWebApi.Models
     {
         public Usuario()
         {
-            Billeteras = new HashSet<Billetera>();
-            Operacions = new HashSet<Operacion>();
         }
 
         public int IdUsuario { get; set; }
@@ -20,7 +18,5 @@ namespace MiBilleteraWebApi.Models
         public DateTime FechaAlta { get; set; }
         public DateTime? FehcaBaja { get; set; }
 
-        public virtual ICollection<Billetera> Billeteras { get; set; }
-        public virtual ICollection<Operacion> Operacions { get; set; }
     }
 }

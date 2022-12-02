@@ -18,8 +18,8 @@ namespace MiBilleteraWebApi.Models
 
         public virtual DbSet<Billetera> Billeteras { get; set; } = null!;
         public virtual DbSet<Moneda> Monedas { get; set; } = null!;
-        public virtual DbSet<Operacion> Operacions { get; set; } = null!;
-        public virtual DbSet<TipoOperacion> TipoOperacions { get; set; } = null!;
+        public virtual DbSet<Operacione> Operaciones { get; set; } = null!;
+        public virtual DbSet<TipoOperacione> TipoOperaciones { get; set; } = null!;
         public virtual DbSet<Usuario> Usuarios { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -27,7 +27,7 @@ namespace MiBilleteraWebApi.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-GCSTTLU\\SQLEXPRESS; Database=Pil2022; User=sa; Password=12345678; TrustServerCertificate=True");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-I3THAL5\\MSSQLSERVERSAN; Database=Pil2022; User=sa; Password=123; TrustServerCertificate=True");
             }
         }
 
@@ -35,9 +35,8 @@ namespace MiBilleteraWebApi.Models
         {
             modelBuilder.Entity<Billetera>(entity =>
             {
-                entity.HasKey(e => e.IdBilletera);
-
-                entity.ToTable("Billetera");
+                entity.HasKey(e => e.IdBilletera)
+                    .HasName("PK_Billetera");
 
                 entity.Property(e => e.IdBilletera).HasColumnName("ID_Billetera");
 
@@ -53,11 +52,11 @@ namespace MiBilleteraWebApi.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Billetera_Monedas");
 
-                entity.HasOne(d => d.IdUsuarioNavigation)
-                    .WithMany(p => p.Billeteras)
-                    .HasForeignKey(d => d.IdUsuario)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Billetera_Usuario");
+                //entity.HasOne(d => d.IdUsuarioNavigation)
+                //    .WithMany(p => p.Billeteras)
+                //    .HasForeignKey(d => d.IdUsuario)
+                //    .OnDelete(DeleteBehavior.ClientSetNull)
+                //    .HasConstraintName("FK_Billetera_Usuario");
             });
 
             modelBuilder.Entity<Moneda>(entity =>
@@ -75,11 +74,10 @@ namespace MiBilleteraWebApi.Models
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<Operacion>(entity =>
+            modelBuilder.Entity<Operacione>(entity =>
             {
-                entity.HasKey(e => e.IdOperacion);
-
-                entity.ToTable("Operacion");
+                entity.HasKey(e => e.IdOperacion)
+                    .HasName("PK_Operacion");
 
                 entity.Property(e => e.IdOperacion).HasColumnName("ID_Operacion");
 
@@ -101,35 +99,34 @@ namespace MiBilleteraWebApi.Models
                     .HasColumnName("monto");
 
                 entity.HasOne(d => d.IdBilleteraNavigation)
-                    .WithMany(p => p.Operacions)
+                    .WithMany(p => p.Operaciones)
                     .HasForeignKey(d => d.IdBilletera)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Operacion_Billetera");
 
                 entity.HasOne(d => d.IdMonedaNavigation)
-                    .WithMany(p => p.Operacions)
+                    .WithMany(p => p.Operaciones)
                     .HasForeignKey(d => d.IdMoneda)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Operacion_Monedas");
 
                 entity.HasOne(d => d.IdTipoOperacionNavigation)
-                    .WithMany(p => p.Operacions)
+                    .WithMany(p => p.Operaciones)
                     .HasForeignKey(d => d.IdTipoOperacion)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Operacion_TipoOperacion");
 
-                entity.HasOne(d => d.IdUsuarioNavigation)
-                    .WithMany(p => p.Operacions)
-                    .HasForeignKey(d => d.IdUsuario)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Operacion_Usuario");
+                //entity.HasOne(d => d.IdUsuarioNavigation)
+                //    .WithMany(p => p.Operaciones)
+                //    .HasForeignKey(d => d.IdUsuario)
+                //    .OnDelete(DeleteBehavior.ClientSetNull)
+                //    .HasConstraintName("FK_Operacion_Usuario");
             });
 
-            modelBuilder.Entity<TipoOperacion>(entity =>
+            modelBuilder.Entity<TipoOperacione>(entity =>
             {
-                entity.HasKey(e => e.IdTipoOperacion);
-
-                entity.ToTable("TipoOperacion");
+                entity.HasKey(e => e.IdTipoOperacion)
+                    .HasName("PK_TipoOperacion");
 
                 entity.Property(e => e.IdTipoOperacion).HasColumnName("ID_TipoOperacion");
 
@@ -145,9 +142,8 @@ namespace MiBilleteraWebApi.Models
 
             modelBuilder.Entity<Usuario>(entity =>
             {
-                entity.HasKey(e => e.IdUsuario);
-
-                entity.ToTable("Usuario");
+                entity.HasKey(e => e.IdUsuario)
+                    .HasName("PK_Usuario");
 
                 entity.Property(e => e.IdUsuario).HasColumnName("ID_Usuario");
 

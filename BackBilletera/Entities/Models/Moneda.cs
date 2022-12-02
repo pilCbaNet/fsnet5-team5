@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Entities
+namespace MiBilleteraWebApi.Models
 {
     public partial class Moneda
     {
         public Moneda()
         {
             Billeteras = new HashSet<Billetera>();
-            Operacions = new HashSet<Operacion>();
+            Operaciones = new HashSet<Operacione>();
         }
 
         public int IdMoneda { get; set; }
@@ -16,6 +16,6 @@ namespace Entities
         public string Tipo { get; set; } = null!;
 
         public virtual ICollection<Billetera> Billeteras { get; set; }
-        public virtual ICollection<Operacion> Operacions { get; set; }
+        public virtual ICollection<Operacione> Operaciones { get; set; }
     }
 }

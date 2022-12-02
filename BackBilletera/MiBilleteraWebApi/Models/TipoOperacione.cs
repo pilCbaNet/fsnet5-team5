@@ -3,17 +3,17 @@ using System.Collections.Generic;
 
 namespace MiBilleteraWebApi.Models
 {
-    public partial class TipoOperacion
+    public partial class TipoOperacione
     {
-        public TipoOperacion()
+        public TipoOperacione()
         {
-            Operacions = new HashSet<Operacion>();
+            Operaciones = new HashSet<Operacione>();
         }
 
         public int IdTipoOperacion { get; set; }
         public string NombreOperacion { get; set; } = null!;
         public string Descripcion { get; set; } = null!;
 
-        public virtual ICollection<Operacion> Operacions { get; set; }
+        public virtual ICollection<Operacione> Operaciones { get; set; }
     }
 }

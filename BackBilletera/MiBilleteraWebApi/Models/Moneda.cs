@@ -8,7 +8,7 @@ namespace MiBilleteraWebApi.Models
         public Moneda()
         {
             Billeteras = new HashSet<Billetera>();
-            Operacions = new HashSet<Operacion>();
+            Operaciones = new HashSet<Operacione>();
         }
 
         public int IdMoneda { get; set; }
@@ -16,6 +16,6 @@ namespace MiBilleteraWebApi.Models
         public string Tipo { get; set; } = null!;
 
         public virtual ICollection<Billetera> Billeteras { get; set; }
-        public virtual ICollection<Operacion> Operacions { get; set; }
+        public virtual ICollection<Operacione> Operaciones { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MiBilleteraWebApi.Models;
+using Microsoft.AspNetCore.Mvc;
+
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,36 +10,76 @@ namespace MiBilleteraWebApi.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
+
         // GET: api/<UsuarioController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<Usuario> Get()
         {
-            return new string[] { "usuario1", "usuario2", "usuario3", "usuario4" };
+            using (var db = new Pil2022Context())
+            {
+                return db.Usuarios.ToList();
+            }
         }
 
         // GET api/<UsuarioController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Usuario? Get(int id)
         {
-            return "";
+            using (var db = new Pil2022Context())
+            {
+                return db.Usuarios.FirstOrDefault(x => x.IdUsuario == id);
+            }
         }
 
         // POST api/<UsuarioController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult Post(Usuario usuario)
         {
+            using (var db = new Pil2022Context())
+            {
+                var existeUsuario = db.Usuarios.FirstOrDefault(x => x.Dni == usuario.Dni);
+                if(existeUsuario != null)
+                {
+                    return NotFound();
+                }
+                db.Add(usuario);
+                db.SaveChanges();
+                return Ok();
+            }
         }
 
         // PUT api/<UsuarioController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public ActionResult Put(int id, Usuario usuario)
         {
+            using (var db = new Pil2022Context())
+            {
+                var existeUsuario = db.Usuarios.FirstOrDefault(x => x.IdUsuario == id);
+                if(existeUsuario!= null)
+                {
+                    db.Update(usuario);
+                    db.SaveChanges();
+                    return Ok();
+                }
+                return NotFound();
+            }
         }
 
         // DELETE api/<UsuarioController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult Delete(int id)
         {
+            using (var db = new Pil2022Context())
+            {
+                var existeUsuario = db.Usuarios.FirstOrDefault(x => x.IdUsuario == id);
+                if (existeUsuario == null)
+                {
+                    return NotFound();
+                }
+                db.Remove(new Usuario() { IdUsuario = id});
+                db.SaveChanges();
+                return Ok();
+            }
         }
     }
 }

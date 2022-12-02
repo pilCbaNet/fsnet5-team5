@@ -7,7 +7,7 @@ namespace MiBilleteraWebApi.Models
     {
         public Billetera()
         {
-            Operacions = new HashSet<Operacion>();
+            Operaciones = new HashSet<Operacione>();
         }
 
         public int IdBilletera { get; set; }
@@ -17,6 +17,6 @@ namespace MiBilleteraWebApi.Models
 
         public virtual Moneda IdMonedaNavigation { get; set; } = null!;
         public virtual Usuario IdUsuarioNavigation { get; set; } = null!;
-        public virtual ICollection<Operacion> Operacions { get; set; }
+        public virtual ICollection<Operacione> Operaciones { get; set; }
     }
 }

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Entities
+namespace MiBilleteraWebApi.Models
 {
-    public partial class Operacion
+    public partial class Operacione
     {
         public int IdOperacion { get; set; }
         public decimal Monto { get; set; }
@@ -15,7 +15,7 @@ namespace Entities
 
         public virtual Billetera IdBilleteraNavigation { get; set; } = null!;
         public virtual Moneda IdMonedaNavigation { get; set; } = null!;
-        public virtual TipoOperacion IdTipoOperacionNavigation { get; set; } = null!;
+        public virtual TipoOperacione IdTipoOperacionNavigation { get; set; } = null!;
         public virtual Usuario IdUsuarioNavigation { get; set; } = null!;
     }
 }

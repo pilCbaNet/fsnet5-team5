@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Entities
+namespace MiBilleteraWebApi.Models
 {
     public partial class Usuario
     {
         public Usuario()
         {
-            Billeteras = new HashSet<Billetera>();
-            Operacions = new HashSet<Operacion>();
         }
 
         public int IdUsuario { get; set; }
@@ -20,7 +18,5 @@ namespace Entities
         public DateTime FechaAlta { get; set; }
         public DateTime? FehcaBaja { get; set; }
 
-        public virtual ICollection<Billetera> Billeteras { get; set; }
-        public virtual ICollection<Operacion> Operacions { get; set; }
     }
 }
