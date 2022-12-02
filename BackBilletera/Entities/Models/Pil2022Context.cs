@@ -18,8 +18,8 @@ namespace MiBilleteraWebApi.Models
 
         public virtual DbSet<Billetera> Billeteras { get; set; } = null!;
         public virtual DbSet<Moneda> Monedas { get; set; } = null!;
-        public virtual DbSet<Operacione> Operaciones { get; set; } = null!;
-        public virtual DbSet<TipoOperacione> TipoOperaciones { get; set; } = null!;
+        public virtual DbSet<Operacion> Operaciones { get; set; } = null!;
+        public virtual DbSet<TipoOperacion> TipoOperaciones { get; set; } = null!;
         public virtual DbSet<Usuario> Usuarios { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -46,11 +46,11 @@ namespace MiBilleteraWebApi.Models
 
                 entity.Property(e => e.Saldo).HasColumnType("money");
 
-                entity.HasOne(d => d.IdMonedaNavigation)
-                    .WithMany(p => p.Billeteras)
-                    .HasForeignKey(d => d.IdMoneda)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Billetera_Monedas");
+                //entity.HasOne(d => d.IdMonedaNavigation)
+                //    .WithMany(p => p.Billeteras)
+                //    .HasForeignKey(d => d.IdMoneda)
+                //    .OnDelete(DeleteBehavior.ClientSetNull)
+                //    .HasConstraintName("FK_Billetera_Monedas");
 
                 //entity.HasOne(d => d.IdUsuarioNavigation)
                 //    .WithMany(p => p.Billeteras)
@@ -74,7 +74,7 @@ namespace MiBilleteraWebApi.Models
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<Operacione>(entity =>
+            modelBuilder.Entity<Operacion>(entity =>
             {
                 entity.HasKey(e => e.IdOperacion)
                     .HasName("PK_Operacion");
@@ -98,23 +98,23 @@ namespace MiBilleteraWebApi.Models
                     .HasColumnType("money")
                     .HasColumnName("monto");
 
-                entity.HasOne(d => d.IdBilleteraNavigation)
-                    .WithMany(p => p.Operaciones)
-                    .HasForeignKey(d => d.IdBilletera)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Operacion_Billetera");
+                //entity.HasOne(d => d.IdBilleteraNavigation)
+                //    .WithMany(p => p.Operaciones)
+                //    .HasForeignKey(d => d.IdBilletera)
+                //    .OnDelete(DeleteBehavior.ClientSetNull)
+                //    .HasConstraintName("FK_Operacion_Billetera");
 
-                entity.HasOne(d => d.IdMonedaNavigation)
-                    .WithMany(p => p.Operaciones)
-                    .HasForeignKey(d => d.IdMoneda)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Operacion_Monedas");
+                //entity.HasOne(d => d.IdMonedaNavigation)
+                //    .WithMany(p => p.Operaciones)
+                //    .HasForeignKey(d => d.IdMoneda)
+                //    .OnDelete(DeleteBehavior.ClientSetNull)
+                //    .HasConstraintName("FK_Operacion_Monedas");
 
-                entity.HasOne(d => d.IdTipoOperacionNavigation)
-                    .WithMany(p => p.Operaciones)
-                    .HasForeignKey(d => d.IdTipoOperacion)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Operacion_TipoOperacion");
+                //entity.HasOne(d => d.IdTipoOperacionNavigation)
+                //    .WithMany(p => p.Operaciones)
+                //    .HasForeignKey(d => d.IdTipoOperacion)
+                //    .OnDelete(DeleteBehavior.ClientSetNull)
+                //    .HasConstraintName("FK_Operacion_TipoOperacion");
 
                 //entity.HasOne(d => d.IdUsuarioNavigation)
                 //    .WithMany(p => p.Operaciones)
@@ -123,7 +123,7 @@ namespace MiBilleteraWebApi.Models
                 //    .HasConstraintName("FK_Operacion_Usuario");
             });
 
-            modelBuilder.Entity<TipoOperacione>(entity =>
+            modelBuilder.Entity<TipoOperacion>(entity =>
             {
                 entity.HasKey(e => e.IdTipoOperacion)
                     .HasName("PK_TipoOperacion");

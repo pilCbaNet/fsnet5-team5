@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MiBilleteraWebApi.Models
 {
-    public partial class Operacione
+    public partial class Operacion
     {
         public int IdOperacion { get; set; }
         public decimal Monto { get; set; }
@@ -13,9 +13,9 @@ namespace MiBilleteraWebApi.Models
         public int IdMoneda { get; set; }
         public int IdTipoOperacion { get; set; }
 
-        public virtual Billetera IdBilleteraNavigation { get; set; } = null!;
-        public virtual Moneda IdMonedaNavigation { get; set; } = null!;
-        public virtual TipoOperacione IdTipoOperacionNavigation { get; set; } = null!;
-        public virtual Usuario IdUsuarioNavigation { get; set; } = null!;
+        //public virtual Billetera IdBilleteraNavigation { get; set; } = null!;
+        //public virtual Moneda IdMonedaNavigation { get; set; } = null!;
+        //public virtual TipoOperacion IdTipoOperacionNavigation { get; set; } = null!;
+        //public virtual Usuario IdUsuarioNavigation { get; set; } = null!;
     }
 }
