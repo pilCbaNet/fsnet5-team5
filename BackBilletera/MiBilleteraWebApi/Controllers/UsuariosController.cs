@@ -11,58 +11,52 @@ namespace MiBilleteraWebApi.Controllers
     [ApiController]
     public class UsuariosController : ControllerBase
     {
+        private readonly Pil2022Context context;
+
+        public UsuariosController(Pil2022Context context)
+        {
+            this.context = context;
+        }
 
         // GET: api/<UsuarioController>
         [HttpGet]
         public List<Usuario> Get()
         {
-            using (var db = new Pil2022Context())
-            {
-                return db.Usuarios.ToList();
-            }
+            return context.Usuarios.ToList();
         }
 
         // GET api/<UsuarioController>/5
         [HttpGet("{id}")]
         public Usuario? Get(int id)
         {
-            using (var db = new Pil2022Context())
-            {
-                return db.Usuarios.FirstOrDefault(x => x.IdUsuario == id);
-            }
+            return context.Usuarios.FirstOrDefault(x => x.IdUsuario == id);
         }
 
         // POST api/<UsuarioController>
         [HttpPost]
         public ActionResult Post(Usuario usuario)
         {
-            using (var db = new Pil2022Context())
+            var existeUsuario = context.Usuarios.FirstOrDefault(x => x.Dni == usuario.Dni);
+            if(existeUsuario != null)
             {
-                var existeUsuario = db.Usuarios.FirstOrDefault(x => x.Dni == usuario.Dni);
-                if(existeUsuario != null)
-                {
-                    return BadRequest("El usuario que quiere registrar, ya se encuentra registrado anteriormente.");
-                }
-                db.Add(usuario);
-                db.SaveChanges();
-                return Ok();
+                return BadRequest("El usuario que quiere registrar, ya se encuentra registrado anteriormente.");
             }
+            context.Add(usuario);
+            context.SaveChanges();
+            return Ok();
         }
 
         [HttpPost("baja/{id:int}")]
         public ActionResult PostEstado(int id)
         {
-            using (var db = new Pil2022Context())
+            var existeUsuario = context.Usuarios.FirstOrDefault(x => x.IdUsuario == id);
+            if (existeUsuario == null)
             {
-                var existeUsuario = db.Usuarios.FirstOrDefault(x => x.IdUsuario == id);
-                if (existeUsuario == null)
-                {
-                    return NotFound();
-                }
-                existeUsuario.FehcaBaja = DateTime.Now;
-                db.SaveChanges();
-                return Ok();
+                return NotFound();
             }
+            existeUsuario.FehcaBaja = DateTime.Now;
+            context.SaveChanges();
+            return Ok();
         }
 
 
@@ -70,41 +64,28 @@ namespace MiBilleteraWebApi.Controllers
         [HttpPut("{id:int}")]
         public ActionResult Put(int id, Usuario usuario)
         {
-            using (var db = new Pil2022Context())
+            if(usuario.IdUsuario != id)
             {
-                if(usuario.IdUsuario != id)
-                {
-                    return NotFound();
-                }
-                db.Update(usuario);
-                db.SaveChanges();
-                return Ok();
+                return NotFound();
             }
+            context.Update(usuario);
+            context.SaveChanges();
+            return Ok();
+            
         }
 
         // DELETE api/<UsuarioController>/5
         [HttpDelete("{id:int}")]
         public ActionResult Delete(int id)
         {
-            using (var db = new Pil2022Context())
+            var existeUsuario = context.Usuarios.Any(x => x.IdUsuario == id);
+            if (existeUsuario == null)
             {
-                try
-                {
-                    var existeUsuario = db.Usuarios.Any(x => x.IdUsuario == id);
-                    if (existeUsuario == null)
-                    {
-                        return NotFound();
-                    }
-                    db.Remove(new Usuario() { IdUsuario = id });
-                    db.SaveChangesAsync();
-                    return Ok();
-                }
-                catch (Exception ex)
-                {
-                    throw;
-                }
-
+                return NotFound();
             }
+             context.Remove(new Usuario() { IdUsuario = id });
+             context.SaveChangesAsync();
+            return Ok();
         }
     }
 }

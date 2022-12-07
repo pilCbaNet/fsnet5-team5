@@ -7,11 +7,7 @@ namespace MiBilleteraWebApi.Models
 {
     public partial class Pil2022Context : DbContext
     {
-        public Pil2022Context()
-        {
-        }
-
-        public Pil2022Context(DbContextOptions<Pil2022Context> options)
+        public Pil2022Context(DbContextOptions options)
             : base(options)
         {
         }
@@ -21,16 +17,6 @@ namespace MiBilleteraWebApi.Models
         public virtual DbSet<Operacion> Operaciones { get; set; } = null!;
         public virtual DbSet<TipoOperacion> TipoOperaciones { get; set; } = null!;
         public virtual DbSet<Usuario> Usuarios { get; set; } = null!;
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-I3THAL5\\MSSQLSERVERSAN; Database=Pil2022; User=sa; Password=123; TrustServerCertificate=True");
-            }
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Billetera>(entity =>
