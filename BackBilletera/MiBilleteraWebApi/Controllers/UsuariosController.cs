@@ -54,7 +54,14 @@ namespace MiBilleteraWebApi.Controllers
             {
                 return NotFound();
             }
-            existeUsuario.FehcaBaja = DateTime.Now;
+            if(existeUsuario.FehcaBaja != null)
+            {
+                existeUsuario.FehcaBaja = null;
+            }
+            else
+            {
+                existeUsuario.FehcaBaja = DateTime.Now;
+            }
             context.SaveChanges();
             return Ok();
         }
@@ -72,20 +79,6 @@ namespace MiBilleteraWebApi.Controllers
             context.SaveChanges();
             return Ok();
             
-        }
-
-        // DELETE api/<UsuarioController>/5
-        [HttpDelete("{id:int}")]
-        public ActionResult Delete(int id)
-        {
-            var existeUsuario = context.Usuarios.Any(x => x.IdUsuario == id);
-            if (existeUsuario == null)
-            {
-                return NotFound();
-            }
-             context.Remove(new Usuario() { IdUsuario = id });
-             context.SaveChangesAsync();
-            return Ok();
         }
     }
 }

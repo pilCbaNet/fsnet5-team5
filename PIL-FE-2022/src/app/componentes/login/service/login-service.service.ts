@@ -9,7 +9,7 @@ import LoginClass from '../loginClass/loginClass';
 })
 export class LoginServiceService {
 
-  private url:string = "http://localhost:3010"
+  private url:string = "http://localhost:3010" //aca va la url de la api de login (del back)
 
   constructor(private http:HttpClient) { }
 
@@ -18,5 +18,10 @@ export class LoginServiceService {
   }
   getUsers():Observable<any>{
     return this.http.get(this.url + "/users");
+  }
+
+  //metodo agregado para iniciar sesion desde el back
+  iniciarSesion(login:LoginClass):Observable<any>{
+    return this.http.post<any>(this.url, login)
   }
 }

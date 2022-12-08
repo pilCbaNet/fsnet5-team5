@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
         if (email.length !== 0 && Password.length !== 0  ) {
         let log: LoginClass = new LoginClass(email, Password, 0 , []);
 
-        this.service.login(log).subscribe((data) => {
+        this.service.iniciarSesion(log).subscribe((data) => {
           this.form.reset();
           localStorage.setItem('tokenPrueba', email);
           location.reload();
