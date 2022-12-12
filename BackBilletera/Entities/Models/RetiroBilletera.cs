@@ -12,6 +12,5 @@ namespace Entities.Models
         public int IdBilletera { get; set; }
         public decimal Saldo { get; set; }
 
-        public int IdUsuario { get; set; }
     }
 }
