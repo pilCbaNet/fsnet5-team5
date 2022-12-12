@@ -23,5 +23,8 @@ namespace MiBilleteraWebApi.Controllers
                     return lista.ToList();
 
             }
+
+
+
     }
 }

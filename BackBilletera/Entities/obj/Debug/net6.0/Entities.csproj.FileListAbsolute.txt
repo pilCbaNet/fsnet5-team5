@@ -27,3 +27,15 @@ C:\Users\tiago\OneDrive\Escritorio\Nueva carpeta\fsnet5-team5\BackBilletera\Enti
 C:\Users\tiago\OneDrive\Escritorio\Nueva carpeta\fsnet5-team5\BackBilletera\Entities\obj\Debug\net6.0\refint\Entities.dll
 C:\Users\tiago\OneDrive\Escritorio\Nueva carpeta\fsnet5-team5\BackBilletera\Entities\obj\Debug\net6.0\Entities.pdb
 C:\Users\tiago\OneDrive\Escritorio\Nueva carpeta\fsnet5-team5\BackBilletera\Entities\obj\Debug\net6.0\ref\Entities.dll
+C:\Users\tiago\OneDrive\Escritorio\fsnet5-team5\BackBilletera\Entities\bin\Debug\net6.0\Entities.deps.json
+C:\Users\tiago\OneDrive\Escritorio\fsnet5-team5\BackBilletera\Entities\bin\Debug\net6.0\Entities.dll
+C:\Users\tiago\OneDrive\Escritorio\fsnet5-team5\BackBilletera\Entities\bin\Debug\net6.0\Entities.pdb
+C:\Users\tiago\OneDrive\Escritorio\fsnet5-team5\BackBilletera\Entities\obj\Debug\net6.0\Entities.csproj.AssemblyReference.cache
+C:\Users\tiago\OneDrive\Escritorio\fsnet5-team5\BackBilletera\Entities\obj\Debug\net6.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tiago\OneDrive\Escritorio\fsnet5-team5\BackBilletera\Entities\obj\Debug\net6.0\Entities.AssemblyInfoInputs.cache
+C:\Users\tiago\OneDrive\Escritorio\fsnet5-team5\BackBilletera\Entities\obj\Debug\net6.0\Entities.AssemblyInfo.cs
+C:\Users\tiago\OneDrive\Escritorio\fsnet5-team5\BackBilletera\Entities\obj\Debug\net6.0\Entities.csproj.CoreCompileInputs.cache
+C:\Users\tiago\OneDrive\Escritorio\fsnet5-team5\BackBilletera\Entities\obj\Debug\net6.0\Entities.dll
+C:\Users\tiago\OneDrive\Escritorio\fsnet5-team5\BackBilletera\Entities\obj\Debug\net6.0\refint\Entities.dll
+C:\Users\tiago\OneDrive\Escritorio\fsnet5-team5\BackBilletera\Entities\obj\Debug\net6.0\Entities.pdb
+C:\Users\tiago\OneDrive\Escritorio\fsnet5-team5\BackBilletera\Entities\obj\Debug\net6.0\ref\Entities.dll
