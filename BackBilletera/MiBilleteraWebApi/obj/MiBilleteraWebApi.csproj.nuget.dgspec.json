@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Fonti\\CURSOS Y PASANTIAS\\PIL (Kinetic)\\Proyecto\\fsnet5-team5\\BackBilletera\\MiBilleteraWebApi\\MiBilleteraWebApi.csproj": {}
+    "C:\\Users\\mate_\\Desktop\\proyects\\Pil\\fsnet5-team5\\BackBilletera\\MiBilleteraWebApi\\MiBilleteraWebApi.csproj": {}
   },
   "projects": {
-    "D:\\Fonti\\CURSOS Y PASANTIAS\\PIL (Kinetic)\\Proyecto\\fsnet5-team5\\BackBilletera\\Entities\\Entities.csproj": {
+    "C:\\Users\\mate_\\Desktop\\proyects\\Pil\\fsnet5-team5\\BackBilletera\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Fonti\\CURSOS Y PASANTIAS\\PIL (Kinetic)\\Proyecto\\fsnet5-team5\\BackBilletera\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\mate_\\Desktop\\proyects\\Pil\\fsnet5-team5\\BackBilletera\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "D:\\Fonti\\CURSOS Y PASANTIAS\\PIL (Kinetic)\\Proyecto\\fsnet5-team5\\BackBilletera\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\Fonti\\CURSOS Y PASANTIAS\\PIL (Kinetic)\\Proyecto\\fsnet5-team5\\BackBilletera\\Entities\\obj\\",
+        "projectPath": "C:\\Users\\mate_\\Desktop\\proyects\\Pil\\fsnet5-team5\\BackBilletera\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\mate_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mate_\\Desktop\\proyects\\Pil\\fsnet5-team5\\BackBilletera\\Entities\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\mate_\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -73,21 +69,17 @@
         }
       }
     },
-    "D:\\Fonti\\CURSOS Y PASANTIAS\\PIL (Kinetic)\\Proyecto\\fsnet5-team5\\BackBilletera\\MiBilleteraWebApi\\MiBilleteraWebApi.csproj": {
+    "C:\\Users\\mate_\\Desktop\\proyects\\Pil\\fsnet5-team5\\BackBilletera\\MiBilleteraWebApi\\MiBilleteraWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Fonti\\CURSOS Y PASANTIAS\\PIL (Kinetic)\\Proyecto\\fsnet5-team5\\BackBilletera\\MiBilleteraWebApi\\MiBilleteraWebApi.csproj",
+        "projectUniqueName": "C:\\Users\\mate_\\Desktop\\proyects\\Pil\\fsnet5-team5\\BackBilletera\\MiBilleteraWebApi\\MiBilleteraWebApi.csproj",
         "projectName": "MiBilleteraWebApi",
-        "projectPath": "D:\\Fonti\\CURSOS Y PASANTIAS\\PIL (Kinetic)\\Proyecto\\fsnet5-team5\\BackBilletera\\MiBilleteraWebApi\\MiBilleteraWebApi.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\Fonti\\CURSOS Y PASANTIAS\\PIL (Kinetic)\\Proyecto\\fsnet5-team5\\BackBilletera\\MiBilleteraWebApi\\obj\\",
+        "projectPath": "C:\\Users\\mate_\\Desktop\\proyects\\Pil\\fsnet5-team5\\BackBilletera\\MiBilleteraWebApi\\MiBilleteraWebApi.csproj",
+        "packagesPath": "C:\\Users\\mate_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mate_\\Desktop\\proyects\\Pil\\fsnet5-team5\\BackBilletera\\MiBilleteraWebApi\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\mate_\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -101,8 +93,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Fonti\\CURSOS Y PASANTIAS\\PIL (Kinetic)\\Proyecto\\fsnet5-team5\\BackBilletera\\Entities\\Entities.csproj": {
-                "projectPath": "D:\\Fonti\\CURSOS Y PASANTIAS\\PIL (Kinetic)\\Proyecto\\fsnet5-team5\\BackBilletera\\Entities\\Entities.csproj"
+              "C:\\Users\\mate_\\Desktop\\proyects\\Pil\\fsnet5-team5\\BackBilletera\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\mate_\\Desktop\\proyects\\Pil\\fsnet5-team5\\BackBilletera\\Entities\\Entities.csproj"
               }
             }
           }
@@ -130,6 +122,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
+            },
+            "jose-jwt": {
+              "target": "Package",
+              "version": "[4.1.0, )"
             }
           },
           "imports": [

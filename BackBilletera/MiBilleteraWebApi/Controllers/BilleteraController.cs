@@ -31,7 +31,6 @@ namespace MiBilleteraWebApi.Controllers
                 var montoRetirado = retiro.Saldo - retiroBillertera.Saldo;
 
                 retiro.Saldo = montoRetirado;
-                retiro.IdUsuario = retiroBillertera.IdUsuario;
                 retiro.IdMoneda = 1;
 
 
@@ -78,7 +77,6 @@ namespace MiBilleteraWebApi.Controllers
                 var montoRetirado = retiro.Saldo + retiroBillertera.Saldo;
 
                 retiro.Saldo = montoRetirado;
-                retiro.IdUsuario = retiroBillertera.IdUsuario;
                 retiro.IdMoneda = 1;
 
                 var operaciones = new Operacion()
