@@ -10,7 +10,7 @@ import RegisterClass from '../RegisterClass/registerClass';
 })
 export class LoginServiceService {
 
-  private url:string = "https://localhost:7177/api/usuarios" //aca va la url de la api de login (del back)
+  private url:string = "https://localhost:7177/api/usuarios" 
 
   constructor(private http:HttpClient) { }
 

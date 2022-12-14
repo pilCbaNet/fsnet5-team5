@@ -1,7 +1,7 @@
 export default class RegisterClass{
 
     email: string = ""
-    pasword: string = ""
+    password: string = ""
     nombre: string = ""
     apellido: string = ""
     dni: string = ""
@@ -11,7 +11,7 @@ export default class RegisterClass{
 
    constructor(Email: string, Pasword: string, Nombre: string, Apellido: string, Dni: string){
        this.email = Email;
-       this.pasword = Pasword;
+       this.password = Pasword;
        this.dni =  Dni;
        this.nombre = Nombre;
        this.apellido = Apellido;
