@@ -44,9 +44,13 @@ namespace MiBilleteraWebApi.Controllers
         public ActionResult PostIniciar(Logeo usuario)
         {
             var existeUsuario = context.Usuarios.FirstOrDefault(x => x.Email == usuario.Email);
-            if (existeUsuario == null && existeUsuario.FechaBaja != null)
+            if (existeUsuario == null)
             {
                 return BadRequest("El usuario que quiere Ingresar, no esta registrado.");
+            }
+            if (existeUsuario.FechaBaja != null)
+            {
+                return BadRequest("El usuario esta dado de baja");
             }
             context.SaveChanges();
             var secretKey = new byte[] { 164, 60, 194, 0, 161, 189, 41, 38, 130, 89, 141, 164, 45, 170, 159, 209, 69, 137, 243, 216, 191, 131, 47, 250, 32, 107, 231, 117, 37, 158, 225, 234 };
