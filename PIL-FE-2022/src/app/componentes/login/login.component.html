@@ -9,90 +9,85 @@
         />
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form [formGroup]="form" (ngSubmit)="login()">
-          <div
-            class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start"
-          >
-            <p class="lead fw-normal mb-0 me-3">{{ titulo }}</p>
-            <button
-              type="button"
-              class="btn btn-floating mx-1"
-              style="background-color: rgb(20, 40, 80)"
-            ></button>
+        <div
+          class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start"
+        >
+          <p class="lead fw-normal mb-0 me-3">{{ titulo }}</p>
+          <button
+            type="button"
+            class="btn btn-floating mx-1"
+            style="background-color: rgb(20, 40, 80)"
+          ></button>
 
-            <button
-              type="button"
-              class="btn btn-floating mx-1"
-              style="background-color: rgb(20, 40, 80)"
-            ></button>
+          <button
+            type="button"
+            class="btn btn-floating mx-1"
+            style="background-color: rgb(20, 40, 80)"
+          ></button>
 
-            <button
-              type="button"
-              class="btn btn-floating mx-1"
-              style="background-color: rgb(20, 40, 80)"
-            ></button>
-          </div>
+          <button
+            type="button"
+            class="btn btn-floating mx-1"
+            style="background-color: rgb(20, 40, 80)"
+          ></button>
+        </div>
 
-          <div class="divider d-flex align-items-center my-4"></div>
+        <div class="divider d-flex align-items-center my-4"></div>
 
-          <!-- Email input -->
-          <div class="form-outline mb-4">
-            <div class="input-group mb-3">
-              <span
-                class="input-group-text"
-                id="basic-addon1"
+        <!-- Logeo -->
+        <form [formGroup]="form" (ngSubmit)="login()" *ngIf="estado === false">
+          <div>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"> &nbsp;@</span>
+                <input
+                  type="email"
+                  id="form3Example3"
+                  class="form-control form-control-lg"
+                  placeholder="Email..."
+                  formControlName="email"
+                />
+              </div>
+              <div
+                *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+                class="text-danger"
               >
-                &nbsp;@</span
+                <div *ngIf="email?.errors?.['required']">
+                  El email es requerido
+                </div>
+                <div *ngIf="email?.errors?.['email']">
+                  El formato del email no es valido
+                </div>
+              </div>
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-3">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">🔒</span>
+                <input
+                  type="password"
+                  id="form3Example4"
+                  class="form-control form-control-lg"
+                  placeholder="Contraseña..."
+                  formControlName="Password"
+                />
+              </div>
+              <div
+                *ngIf="
+                  Password?.invalid && (Password?.dirty || Password?.touched)
+                "
+                class="text-danger"
               >
-              <input
-                type="email"
-                id="form3Example3"
-                class="form-control form-control-lg"
-                placeholder="Email..."
-                formControlName="email"
-              />
-            </div>
-            <div
-              *ngIf="email?.invalid && (email?.dirty || email?.touched)"
-              class="text-danger"
-            >
-              <div *ngIf="email?.errors?.['required']">
-                El email es requerido
-              </div>
-              <div *ngIf="email?.errors?.['email']">
-                El formato del email no es valido
+                <div *ngIf="Password?.errors?.['required']">
+                  La contraseña es requerida
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Password input -->
-          <div class="form-outline mb-3">
-            <div class="input-group mb-3">
-              <span class="input-group-text" id="basic-addon1">🔒</span>
-              <input
-                type="password"
-                id="form3Example4"
-                class="form-control form-control-lg"
-                placeholder="Contraseña..."
-                formControlName="Password"
-              />
-            </div>
-            <div
-              *ngIf="
-                Password?.invalid && (Password?.dirty || Password?.touched)
-              "
-              class="text-danger"
-            >
-              <div *ngIf="Password?.errors?.['required']">
-                La contraseña es requerida
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="d-flex justify-content-between align-items-center"
-            *ngIf="estado === false"
-          >
+          <div class="d-flex justify-content-between align-items-center">
             <!-- Checkbox -->
             <div class="form-check mb-0">
               <input
@@ -108,10 +103,7 @@
             <a href="#!" class="text-body">Olvidaste la contraseña?</a>
           </div>
 
-          <div
-            class="text-center text-lg-start mt-4 pt-2"
-            *ngIf="estado === false"
-          >
+          <div class="text-center text-lg-start mt-4 pt-2">
             <button
               type="submit"
               class="btn btn-lg"
@@ -134,10 +126,119 @@
               >
             </p>
           </div>
-          <div
-            class="text-center text-lg-start mt-4 pt-2"
-            *ngIf="estado === true"
-          >
+        </form>
+
+        <!-- REGISTER -->
+        <form
+          [formGroup]="formRegister"
+          (ngSubmit)="register()"
+          *ngIf="estado === true"
+        >
+          <!-- Nombre input -->
+          <div class="form-outline mb-4">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1"> 😎</span>
+              <input
+                type="Nombre"
+                class="form-control form-control-lg"
+                placeholder="Nombre..."
+                formControlName="nombre"
+              />
+            </div>
+            <div
+              *ngIf="Nombre?.invalid && (Nombre?.dirty || Nombre?.touched)"
+              class="text-danger"
+            >
+              <div *ngIf="Nombre?.errors?.['required']">
+                El nombre es requerido
+              </div>
+            </div>
+          </div>
+          <!-- Apellido input -->
+          <div class="form-outline mb-4">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">😉</span>
+              <input
+                type="Apellido"
+                class="form-control form-control-lg"
+                placeholder="Apellido..."
+                formControlName="apellido"
+              />
+            </div>
+            <div
+              *ngIf="Apellido?.invalid && (Apellido?.dirty || Apellido?.touched)"
+              class="text-danger"
+            >
+              <div *ngIf="Apellido?.errors?.['required']">
+                El Apellido es requerido
+              </div>
+            </div>
+          </div>
+          <!-- Dni input -->
+          <div class="form-outline mb-4">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">🙂</span>
+              <input
+                type="Dni"
+                class="form-control form-control-lg"
+                placeholder="Dni..."
+                formControlName="dni"
+              />
+            </div>
+            <div
+              *ngIf="Dni?.invalid && (Dni?.dirty || Dni?.touched)"
+              class="text-danger"
+            >
+              <div *ngIf="Dni?.errors?.['required']">El Dni es requerido</div>
+            </div>
+          </div>
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">🤖</span>
+              <input
+                type="Email"
+                class="form-control form-control-lg"
+                placeholder="Email..."
+                formControlName="email"
+              />
+            </div>
+            <div
+              *ngIf="emailR?.invalid && (emailR?.dirty || emailR?.touched)"
+              class="text-danger"
+            >
+              <div *ngIf="emailR?.errors?.['required']">
+                El email es requerido
+              </div>
+              <div *ngIf="emailR?.errors?.['email']">
+                El formato del email no es valido
+              </div>
+            </div>
+          </div>
+          <!-- Pasword input -->
+          <div class="form-outline mb-4">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">🔒</span>
+              <input
+                type="password"
+                class="form-control form-control-lg"
+                placeholder="Password..."
+                formControlName="pasword"
+              />
+            </div>
+            <div
+              *ngIf="
+                PasswordR?.invalid && (PasswordR?.dirty || PasswordR?.touched)
+              "
+              class="text-danger"
+            >
+              <div *ngIf="PasswordR?.errors?.['required']">
+                El Password es requerido
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
             <button
               type="submit"
               class="btn btn-lg"

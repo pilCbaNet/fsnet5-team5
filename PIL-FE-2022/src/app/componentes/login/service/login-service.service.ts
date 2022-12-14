@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import LoginClass from '../loginClass/loginClass';
+import RegisterClass from '../RegisterClass/registerClass';
 
 
 @Injectable({
@@ -9,19 +10,17 @@ import LoginClass from '../loginClass/loginClass';
 })
 export class LoginServiceService {
 
-  private url:string = "http://localhost:3010" //aca va la url de la api de login (del back)
+  private url:string = "https://localhost:7177/api/usuarios" //aca va la url de la api de login (del back)
 
   constructor(private http:HttpClient) { }
 
   login(LoginClass: LoginClass):Observable<any>{
-    return this.http.post(this.url + "/users", LoginClass);
-  }
-  getUsers():Observable<any>{
-    return this.http.get(this.url + "/users");
+    return this.http.post(this.url + "/Inicio", LoginClass);
   }
 
-  //metodo agregado para iniciar sesion desde el back
-  iniciarSesion(login:LoginClass):Observable<any>{
-    return this.http.post<any>(this.url, login)
+  register(RegisterClass: RegisterClass):Observable<any>{
+    return this.http.post(this.url, RegisterClass)
   }
+
+
 }

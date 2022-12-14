@@ -39,7 +39,7 @@ namespace MiBilleteraWebApi.Controllers
                 {
 
                     Monto = retiroBillertera.Saldo,
-                    FechaOperacion = DateTime.Today,
+                    FechaOperacion = DateTime.Now,
                     IdUsuario = retiro.IdUsuario,
                     IdBilletera = retiro.IdBilletera,
                     IdMoneda = 1,

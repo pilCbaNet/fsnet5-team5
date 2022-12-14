@@ -33,9 +33,10 @@ export class RetiroComponent implements OnInit {
 
   retirar(){
     
-    this.retiroBody = {"idUsuario": this.idUsuario, "saldo": 600}
+    this.retiroBody = {"idUsuario": this.idUsuario, "saldo": this.monto}
     this.service.retiro(this.retiroBody).subscribe((data) => {
       console.log(data);
+      location.reload();
     })
   }
 

@@ -44,7 +44,7 @@ namespace MiBilleteraWebApi.Controllers
         public ActionResult PostIniciar(Logeo usuario)
         {
             var existeUsuario = context.Usuarios.FirstOrDefault(x => x.Email == usuario.Email);
-            if (existeUsuario == null)
+            if (existeUsuario == null && existeUsuario.FechaBaja != null)
             {
                 return BadRequest("El usuario que quiere Ingresar, no esta registrado.");
             }
@@ -68,6 +68,7 @@ namespace MiBilleteraWebApi.Controllers
             {
                 return BadRequest("El usuario que quiere registrar, ya se encuentra registrado anteriormente.");
             }
+            
             context.Add(usuario);
             context.SaveChanges();
             var usuarioCreado = context.Usuarios.FirstOrDefault(x => x.Email == usuario.Email);
@@ -107,6 +108,7 @@ namespace MiBilleteraWebApi.Controllers
             {
                 existeUsuario.FechaBaja = DateTime.Now;
             }
+            context.Update(existeUsuario);
             context.SaveChanges();
             return Ok();
         }
@@ -120,10 +122,10 @@ namespace MiBilleteraWebApi.Controllers
             {
                 return NotFound();
             }
+            usuario.FechaBaja = null;
             context.Update(usuario);
             context.SaveChanges();
             return Ok();
-            
         }
 
 
