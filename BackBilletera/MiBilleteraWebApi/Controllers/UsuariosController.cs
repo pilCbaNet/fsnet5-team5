@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MiBilleteraWebApi.Controllers
 {
+    [Produces("application/json")]
     [Route("api/usuarios")]
     [ApiController]
     public class UsuariosController : ControllerBase
@@ -20,15 +21,26 @@ namespace MiBilleteraWebApi.Controllers
             this.context = context;
         }
 
-        // GET: api/<UsuarioController>
+        // GET: api/usuarios
+        /// <summary>
+        /// Recupera el listado de los usuarios registrados.
+        /// </summary>
+        /// <returns>Lista de Usuarios.</returns>
         [HttpGet]
+        [Produces(typeof(List<Usuario>))]
         public List<Usuario> Get()
         {
             return context.Usuarios.ToList();
         }
 
-        // GET api/<UsuarioController>/5
+        // GET api/usuarios/token
+        /// <summary>
+        /// Recupera el usuario con el token pasado por parametro.
+        /// </summary>
+        /// <param name="token">Token del usuario</param>
+        /// <returns>Usuario</returns>
         [HttpGet("{token}")]
+        [Produces(typeof(Usuario))]
         public Usuario? Get(string token)
         {
 
@@ -38,9 +50,17 @@ namespace MiBilleteraWebApi.Controllers
             return context.Usuarios.FirstOrDefault(x => x.Email == email);
         }
 
+        // GET api/usuarios/Inicio
+        /// <summary>
+        /// Registra un nuevo usuario en la base de datos.
+        /// </summary>
+        /// <param name="usuario">Usuario que quiere iniciar sesion</param>
+        /// <returns>Usuario con sesion iniciada</returns>
+        /// <response code="200">Confirma la sesion del usuario</response> /// <response code="400">El usuario no se ha encontrado/El usuario esta desactivado</response> 
         [HttpPost]
         [Route("Inicio")]
-
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult PostIniciar(Logeo usuario)
         {
             var existeUsuario = context.Usuarios.FirstOrDefault(x => x.Email == usuario.Email);
@@ -63,8 +83,16 @@ namespace MiBilleteraWebApi.Controllers
 
             return Ok(tok);
         }
-        // POST api/<UsuarioController>
+        // POST api/usuarios
+        /// <summary>
+        /// Registra un nuevo usuario en la base de datos.
+        /// </summary>
+        /// <param name="usuario">Usuario que se quiere registrar</param>
+        /// <returns>Usuario registrado</returns>
+        /// <response code="200">Registra el nuevo usuario</response> /// <response code="400">El usuario ya ha sido registrado</response> 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult Post(Usuario usuario)
         {
             var existeUsuario = context.Usuarios.FirstOrDefault(x => x.Email == usuario.Email);
@@ -96,7 +124,16 @@ namespace MiBilleteraWebApi.Controllers
 
         }
 
+        // POST api/usuarios/baja/id
+        /// <summary>
+        /// Desactiva el usuario con el id pasado por parametro
+        /// </summary>
+        /// <param name="id">ID del usuario</param>
+        /// <returns>Usuario desactivado</returns>
+        /// <response code="200">Modifica el estado del usuario</response> /// <response code="404">El usuario no se encuentra</response>
         [HttpPost("baja/{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public ActionResult PostEstado(int id)
         {
             var existeUsuario = context.Usuarios.FirstOrDefault(x => x.IdUsuario == id);
@@ -151,17 +188,31 @@ namespace MiBilleteraWebApi.Controllers
 
 
 
-
+        /// <summary>
+        /// Encripta el objeto usuario que fue registrado
+        /// </summary>
+        /// <param name="payload"></param>
+        /// <param name="secretKey"></param>
+        /// <returns>Codigo de encriptacion</returns>
         static public string Encriptado(string payload, byte[] secretKey)
         {
             return Jose.JWT.Encode(payload, secretKey, JweAlgorithm.DIR, JweEncryption.A128CBC_HS256);
         }
 
+        /// <summary>
+        /// Desencripta el objeto usuario que fue registrado
+        /// </summary>
+        /// <param name="encriptar"></param>
+        /// <param name="secretKey"></param>
+        /// <returns>Objeto Usuario desencriptado</returns>
         static public string DesEncriptado(string encriptar, byte[] secretKey)
         {
             return Jose.JWT.Decode(encriptar, secretKey, JweAlgorithm.DIR, JweEncryption.A128CBC_HS256);
         }
 
+        /// <summary>
+        /// Token utilizado para Iniciar Sesion
+        /// </summary>
         public class TokenJson
         {
             public string token { get; set; }

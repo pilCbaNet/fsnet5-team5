@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as historyApiFallback from 'connect-history-api-fallback';
 import { UsuarioServices } from 'src/app/componentes/usuarios.service';
+import { MibilleteraService } from '../mibilletera/service/mibilletera.service';
 import { RetiroService } from './retiro.service';
 @Component({
   selector: 'app-retiro',
@@ -17,16 +18,24 @@ export class RetiroComponent implements OnInit {
   idUsuario: number = 0;
   retiroBody: object = {};
   movimiento: object = {};
+  montoActual: number = 0;
 
-  constructor(private service: RetiroService, private serviceUser: UsuarioServices) {}
+  constructor(private service: RetiroService, private serviceUser: UsuarioServices, private serviceBilletera: MibilleteraService) {}
 
   ngOnInit(): void {
     this.getUser();
+  }
+  getMontoBilletera(id: number){
+    this.serviceBilletera.getMonto(id).subscribe((data) =>
+    {
+        this.montoActual = data;
+    })
   }
   getUser(){
     this.serviceUser.getUsuario().subscribe((data) =>
     {
         this.idUsuario = data.idUsuario;
+        this.getMontoBilletera(this.idUsuario);
     })
   }
 
@@ -39,11 +48,9 @@ export class RetiroComponent implements OnInit {
   }
 
   deshabilitado(): boolean {
-    if (this.userActual) {
-      if (this.monto > this.userActual.monto || this.monto <= 0) {
+      if (this.monto <= this.montoActual && this.monto >= 0) {
         return false;
       }
-    }
     return true;
   }
 

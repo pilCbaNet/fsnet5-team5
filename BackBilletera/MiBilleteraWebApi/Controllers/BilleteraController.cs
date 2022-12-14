@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MiBilleteraWebApi.Controllers
 {
+    [Produces("application/json")]
     [Route("api/billetera")]
     [ApiController]
     public class BilleteraController : ControllerBase
@@ -17,7 +18,15 @@ namespace MiBilleteraWebApi.Controllers
             this.context = context;
         }
 
+        /// <summary>
+        /// Registra un nuevo retiro en la base de datos.
+        /// </summary>
+        /// <param name="retiroBillertera">Operacion realizada</param>
+        /// <returns>Operacion Retiro</returns>
         [HttpPost("Retiro")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        /// <response code="200">Registra un nuevo retiro</response> /// <response code="400">No se posee saldo</response> 
         public ActionResult PostRetiro(RetiroBillertera retiroBillertera)
         {
 
@@ -61,8 +70,16 @@ namespace MiBilleteraWebApi.Controllers
         }
 
 
+        /// <summary>
+        /// Registra un nuevo ingreso en la base de datos.
+        /// </summary>
+        /// <param name="retiroBillertera">Operacion realizada</param>
+        /// <returns>Operacion Ingreso</returns>
         [HttpPost("Deposito")]
-        
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        /// <response code="200">Registra un nuevo ingreso</response> /// <response code="400">No se posee saldo</response> 
+
         public ActionResult PostIngresar(RetiroBillertera retiroBillertera)
         {
 
@@ -83,7 +100,7 @@ namespace MiBilleteraWebApi.Controllers
                 {
 
                     Monto = retiroBillertera.Saldo,
-                    FechaOperacion = DateTime.Today,
+                    FechaOperacion = DateTime.Now,
                     IdUsuario = retiro.IdUsuario,
                     IdBilletera = retiro.IdBilletera,
                     IdMoneda = 1,
@@ -99,7 +116,16 @@ namespace MiBilleteraWebApi.Controllers
 
 
         }
+
+        /// <summary>
+        /// Recupera el saldo que posee el usuario registrado.
+        /// </summary>
+        /// <param name="id">Id del usuario</param>
+        /// <returns>Saldo Billetera</returns>
         [HttpGet("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        /// <response code="200">Confirma el saldo de la billetera</response> /// <response code="404">No se encontro la billetera</response> 
         public ActionResult<Billetera> GetSaldo(int id)
         {
 

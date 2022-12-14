@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as historyApiFallback from 'connect-history-api-fallback';
 import { UsuarioServices } from 'src/app/componentes/usuarios.service';
+import { MibilleteraService } from '../mibilletera/service/mibilletera.service';
 import { DepositoService } from './deposito.service';
 @Component({
   selector: 'app-deposito',
@@ -11,6 +12,7 @@ export class DepositoComponent implements OnInit {
   response: boolean = false;
   isLoading: boolean = true;
   monto: number = 0;
+  montoActual: number = 0;
   idUsuario: number = 0;
   depositoBody: object = {};
   constructor(private service: DepositoService, private serviceUser: UsuarioServices) { }
@@ -30,6 +32,11 @@ export class DepositoComponent implements OnInit {
     this.service.deposito(this.depositoBody).subscribe((data) => {
       location.reload();
     })
+  }
+  deshabilitado(): boolean {
+      if(this.monto <= 0) 
+        return false;
+      return true;
   }
 
 }
