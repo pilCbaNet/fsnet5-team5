@@ -115,8 +115,6 @@ export class LoginComponent implements OnInit {
       apellido,
       dni
     );
-    console.log(log);
-
     this.service.register(log).subscribe(
       (result) => {
         this.formRegister.reset();

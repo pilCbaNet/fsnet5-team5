@@ -118,18 +118,35 @@ namespace MiBilleteraWebApi.Controllers
         }
 
 
-        // PUT api/<UsuarioController>/5
-        [HttpPut("{id:int}")]
-        public ActionResult Put(int id, Usuario usuario)
+        // Post api/usuarios/id
+        /// <summary>
+        /// Actualiza los datos de un usuario registrado
+        /// </summary>
+        /// <param name="id">ID del usuario</param>
+        /// <param name="cliente">Usuario cuyos atributos se actualizaran</param>
+        /// <returns>Usuario con datos modificados</returns>
+        /// <response code="200">Modifica los datos del usuario</response> /// <response code="400">El id del usuario no coincide</response> 
+        [HttpPost("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult> PostId(int id, Usuario usuario)
         {
-            if(usuario.IdUsuario != id)
+            try
             {
-                return NotFound();
+                if (usuario.IdUsuario != id)
+                {
+                    return BadRequest("El Id del usuario no esta registrado en el sistema");
+                }
+                context.Update(usuario);
+                usuario.IdUsuario = id;
+                usuario.FechaBaja = null;
+                await context.SaveChangesAsync();
+                return Ok();
             }
-            usuario.FechaBaja = null;
-            context.Update(usuario);
-            context.SaveChanges();
-            return Ok();
+            catch (Exception ex)
+            {
+                throw new Exception("Error al intentar actualizar los datos de un usuario", ex);
+            }
         }
 
 

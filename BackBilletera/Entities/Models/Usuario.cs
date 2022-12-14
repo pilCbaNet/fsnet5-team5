@@ -14,7 +14,7 @@ namespace MiBilleteraWebApi.Models
         public string Apellido { get; set; } = null!;
         public string Dni { get; set; } = null!;
         public string Email { get; set; } = null!;
-        public string Pasword { get; set; } = null!;
+        public string Password { get; set; } = null!;
         public DateTime FechaAlta { get; set; }
         public DateTime? FechaBaja { get; set; } = null;
 

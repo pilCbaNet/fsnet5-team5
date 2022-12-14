@@ -10,7 +10,6 @@ constructor(private http: HttpClient) {
 }
 
 deposito(deposito: any):Observable<any>{
-  console.log(deposito);
   return this.http.post(this.url, deposito);
 }
 }

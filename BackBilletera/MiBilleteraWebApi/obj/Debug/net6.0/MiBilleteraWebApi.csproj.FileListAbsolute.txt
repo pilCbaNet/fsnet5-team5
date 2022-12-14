@@ -175,7 +175,6 @@ D:\Fonti\CURSOS Y PASANTIAS\PIL (Kinetic)\Proyecto\fsnet5-team5\BackBilletera\Mi
 D:\Fonti\CURSOS Y PASANTIAS\PIL (Kinetic)\Proyecto\fsnet5-team5\BackBilletera\MiBilleteraWebApi\obj\Debug\net6.0\MiBilleteraWebApi.AssemblyInfoInputs.cache
 D:\Fonti\CURSOS Y PASANTIAS\PIL (Kinetic)\Proyecto\fsnet5-team5\BackBilletera\MiBilleteraWebApi\obj\Debug\net6.0\MiBilleteraWebApi.AssemblyInfo.cs
 D:\Fonti\CURSOS Y PASANTIAS\PIL (Kinetic)\Proyecto\fsnet5-team5\BackBilletera\MiBilleteraWebApi\obj\Debug\net6.0\MiBilleteraWebApi.csproj.CoreCompileInputs.cache
-D:\Fonti\CURSOS Y PASANTIAS\PIL (Kinetic)\Proyecto\fsnet5-team5\BackBilletera\MiBilleteraWebApi\obj\Debug\net6.0\MiBilleteraWebApi.MvcApplicationPartsAssemblyInfo.cs
 D:\Fonti\CURSOS Y PASANTIAS\PIL (Kinetic)\Proyecto\fsnet5-team5\BackBilletera\MiBilleteraWebApi\obj\Debug\net6.0\MiBilleteraWebApi.MvcApplicationPartsAssemblyInfo.cache
 D:\Fonti\CURSOS Y PASANTIAS\PIL (Kinetic)\Proyecto\fsnet5-team5\BackBilletera\MiBilleteraWebApi\obj\Debug\net6.0\staticwebassets\msbuild.MiBilleteraWebApi.Microsoft.AspNetCore.StaticWebAssets.props
 D:\Fonti\CURSOS Y PASANTIAS\PIL (Kinetic)\Proyecto\fsnet5-team5\BackBilletera\MiBilleteraWebApi\obj\Debug\net6.0\staticwebassets\msbuild.build.MiBilleteraWebApi.props
@@ -390,3 +389,4 @@ C:\Users\mate_\Desktop\proyects\Pil\fsnet5-team5\BackBilletera\MiBilleteraWebApi
 C:\Users\mate_\Desktop\proyects\Pil\fsnet5-team5\BackBilletera\MiBilleteraWebApi\obj\Debug\net6.0\ref\MiBilleteraWebApi.dll
 C:\Users\mate_\Desktop\proyects\Pil\fsnet5-team5\BackBilletera\MiBilleteraWebApi\bin\Debug\net6.0\jose-jwt.dll
 D:\Fonti\CURSOS Y PASANTIAS\PIL (Kinetic)\Proyecto\fsnet5-team5\BackBilletera\MiBilleteraWebApi\bin\Debug\net6.0\jose-jwt.dll
+D:\Fonti\CURSOS Y PASANTIAS\PIL (Kinetic)\Proyecto\fsnet5-team5\BackBilletera\MiBilleteraWebApi\obj\Debug\net6.0\MiBilleteraWebApi.MvcApplicationPartsAssemblyInfo.cs

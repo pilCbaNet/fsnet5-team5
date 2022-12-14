@@ -22,7 +22,7 @@ export class QuienesSomosComponent implements OnInit {
   getQuienesSomos(): void{
     this.services.getQuienesSomos().subscribe(
       (data) => this.developers = data,
-      (error)=> console.log(error)
+      (error)=> alert(error)
     )
   }
 

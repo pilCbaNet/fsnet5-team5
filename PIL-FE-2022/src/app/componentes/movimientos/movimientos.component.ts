@@ -32,7 +32,6 @@ export class MovimientosComponent implements OnInit {
   getMovimientos(): void{
      this.service.getMovimientos(this.idUsuario).subscribe((data) => {
        this.movimientos = data;
-       console.log(data);
      });
    }
 

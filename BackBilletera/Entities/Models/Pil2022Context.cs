@@ -161,10 +161,10 @@ namespace MiBilleteraWebApi.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Pasword)
+                entity.Property(e => e.Password)
                     .HasMaxLength(150)
                     .IsUnicode(false)
-                    .HasColumnName("pasword");
+                    .HasColumnName("password");
             });
 
             OnModelCreatingPartial(modelBuilder);

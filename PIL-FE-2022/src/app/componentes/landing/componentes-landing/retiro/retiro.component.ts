@@ -27,7 +27,6 @@ export class RetiroComponent implements OnInit {
     this.serviceUser.getUsuario().subscribe((data) =>
     {
         this.idUsuario = data.idUsuario;
-        console.log(this.idUsuario)
     })
   }
 
@@ -35,7 +34,6 @@ export class RetiroComponent implements OnInit {
     
     this.retiroBody = {"idUsuario": this.idUsuario, "saldo": this.monto}
     this.service.retiro(this.retiroBody).subscribe((data) => {
-      console.log(data);
       location.reload();
     })
   }

@@ -28,7 +28,6 @@ export class DepositoComponent implements OnInit {
   {
     this.depositoBody = {"idUsuario": this.idUsuario, "saldo": this.monto}
     this.service.deposito(this.depositoBody).subscribe((data) => {
-      console.log(data);
       location.reload();
     })
   }

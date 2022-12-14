@@ -18,8 +18,8 @@ namespace MiBilleteraWebApi.Controllers
             [HttpGet("{id}")]
             public List<Operacion> Get(int id)
             {
-                    var lista = context.Operaciones.ToList().Where(x => x.IdUsuario == id);
-                    return lista.ToList();
+                var lista = context.Operaciones.ToList().Where(x => x.IdUsuario == id).OrderByDescending(x => x.FechaOperacion);
+                return lista.ToList();
             }
 
 
