@@ -11,14 +11,14 @@
         <div style="float: right;">
           <a class="navbar-brand me-2">
             <img src="https://iconarchive.com/download/i102645/graphicloads/flat-finance/person.ico" height="30"
-              alt="MDB Logo" loading="lazy" style="margin-top: -1px" /> </a>{{usuario}}
+              alt="MDB Logo" loading="lazy" style="margin-top: -1px" /> </a>{{userActual && userActual.nombre}}
         </div>
       </div>
       <div class="card-body text-white row">
         <h5 class="card-title col-12">Fondos de mi billetera</h5>
         <h4 class="card-text col-3">Pesos:</h4>
         <h4 class="text-center col-5">
-          {{ userActual && userActual.monto | currency }}
+          {{ montoFinal && montoFinal | currency }}
         </h4>
       </div>
       <div class="card-footer bg-transparent border-success"></div>

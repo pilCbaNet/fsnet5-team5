@@ -4404,19 +4404,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mate_\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mate_\\Desktop\\proyects\\Pil\\fsnet5-team5\\BackBilletera\\MiBilleteraWebApi\\MiBilleteraWebApi.csproj",
+      "projectUniqueName": "D:\\Fonti\\CURSOS Y PASANTIAS\\PIL (Kinetic)\\Proyecto\\fsnet5-team5\\BackBilletera\\MiBilleteraWebApi\\MiBilleteraWebApi.csproj",
       "projectName": "MiBilleteraWebApi",
-      "projectPath": "C:\\Users\\mate_\\Desktop\\proyects\\Pil\\fsnet5-team5\\BackBilletera\\MiBilleteraWebApi\\MiBilleteraWebApi.csproj",
-      "packagesPath": "C:\\Users\\mate_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mate_\\Desktop\\proyects\\Pil\\fsnet5-team5\\BackBilletera\\MiBilleteraWebApi\\obj\\",
+      "projectPath": "D:\\Fonti\\CURSOS Y PASANTIAS\\PIL (Kinetic)\\Proyecto\\fsnet5-team5\\BackBilletera\\MiBilleteraWebApi\\MiBilleteraWebApi.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "D:\\Fonti\\CURSOS Y PASANTIAS\\PIL (Kinetic)\\Proyecto\\fsnet5-team5\\BackBilletera\\MiBilleteraWebApi\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\mate_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4430,8 +4435,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\mate_\\Desktop\\proyects\\Pil\\fsnet5-team5\\BackBilletera\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\mate_\\Desktop\\proyects\\Pil\\fsnet5-team5\\BackBilletera\\Entities\\Entities.csproj"
+            "D:\\Fonti\\CURSOS Y PASANTIAS\\PIL (Kinetic)\\Proyecto\\fsnet5-team5\\BackBilletera\\Entities\\Entities.csproj": {
+              "projectPath": "D:\\Fonti\\CURSOS Y PASANTIAS\\PIL (Kinetic)\\Proyecto\\fsnet5-team5\\BackBilletera\\Entities\\Entities.csproj"
             }
           }
         }

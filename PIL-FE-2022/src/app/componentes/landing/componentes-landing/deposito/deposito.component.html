@@ -27,18 +27,17 @@
     <div class="col-12 col-lg-3 buttonDiv">
       <button
         type="button"
-        (click)="depositar()"
+        (click)="deposito()"
         class="btn btn-primary"
-        [disabled]="!deshabilitado()"
+      
       >
         Depositar
       </button>
     </div>
   </div>
-  <!-- <div *ngIf="response === true && isLoading === false" class="alert alert-success" role="alert">
+<div *ngIf="response === true && isLoading === false" class="alert alert-success" role="alert">
   Deposito realizado con exito
 </div>
 <div *ngIf="response === false && isLoading === false" class="alert alert-danger" role="alert">
   ERROR ❌ Intente más tarde
-</div> -->
-</div>
+

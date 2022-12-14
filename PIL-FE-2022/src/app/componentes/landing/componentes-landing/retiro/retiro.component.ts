@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as historyApiFallback from 'connect-history-api-fallback';
+import { UsuarioServices } from 'src/app/componentes/usuarios.service';
 import { RetiroService } from './retiro.service';
 @Component({
   selector: 'app-retiro',
@@ -13,48 +14,31 @@ export class RetiroComponent implements OnInit {
   usuario: any = localStorage.getItem('tokenPrueba') || null;
   users: any[] = [];
   userActual: any;
+  idUsuario: number = 0;
+  retiroBody: object = {};
   movimiento: object = {};
 
-  constructor(private service: RetiroService) {}
+  constructor(private service: RetiroService, private serviceUser: UsuarioServices) {}
 
   ngOnInit(): void {
-    this.getUsers();
+    this.getUser();
   }
-  getUsers(): void {
-    this.service.getUsers().subscribe((data) => {
-      this.users = data;
-      this.userActual = this.users.find((data) => this.usuario === data.email);
-    });
+  getUser(){
+    this.serviceUser.getUsuario().subscribe((data) =>
+    {
+        this.idUsuario = data.idUsuario;
+        console.log(this.idUsuario)
+    })
   }
-  retirar() {
-    this.userActual.monto -= this.monto;
-    this.agregarMovimiento();
-    try {
-      this.service.putUsers(this.userActual).subscribe((data) => {
-        this.isLoading = false;
-        this.response = true;
-        location.reload();
-      });
-    } catch {
-      this.isLoading = false;
-      this.response = false;
-    }
-  }
-  agregarMovimiento() {
-    const date = new Date();
-    const fecha = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
-    const hora = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
 
-    this.movimiento = {
-      monto: this.monto,
-      fecha: fecha,
-      hora: hora,
-      moneda: 'pesos',
-      tipo: 'retiro',
-      email: this.userActual.email,
-    };
-    this.userActual.movimientos.push(this.movimiento);
+  retirar(){
+    
+    this.retiroBody = {"idUsuario": this.idUsuario, "saldo": 600}
+    this.service.retiro(this.retiroBody).subscribe((data) => {
+      console.log(data);
+    })
   }
+
   deshabilitado(): boolean {
     if (this.userActual) {
       if (this.monto > this.userActual.monto || this.monto <= 0) {

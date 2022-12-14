@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MovimientosComponent } from './componentes/movimientos/movimientos.component';
 import { QuienesSomosComponent } from './componentes/quienes-somos/quienes-somos.component';
 import { HomeComponent } from './componentes/home/home.component';
+import { ConfiguracionComponent } from './componentes/configuracion/configuracion.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HomeComponent } from './componentes/home/home.component';
     AcercaDeComponent,
     MovimientosComponent,
     QuienesSomosComponent,
-    HomeComponent
+    HomeComponent,
+    ConfiguracionComponent
 
   ],
   imports: [

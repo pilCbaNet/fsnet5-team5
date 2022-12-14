@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioServices } from '../usuarios.service';
 import { MovimientoService } from './movimiento.service';
 
 @Component({
@@ -7,24 +8,30 @@ import { MovimientoService } from './movimiento.service';
   styleUrls: ['./movimientos.component.css']
 })
 export class MovimientosComponent implements OnInit {
-  constructor(private service: MovimientoService) { }
+  constructor(private service: MovimientoService, private serviceUser: UsuarioServices) { }
   usuario: any =  localStorage.getItem("tokenPrueba") || null;
   users: any[] = [];
   userActual: any; 
   montoFinal: any; 
   idMontoFinal: any = 0;
+  idUsuario: number = 0;
 
   retiro: string = "retiro";
 
   ngOnInit(): void {
     this.getUsers();
+    this.getMovimientos();
   }
-  getUsers(): void{
-    this.service.getMonto().subscribe((data) => {
-      this.users = data;
-      this.userActual = this.users.find((data) => this.usuario === data.email);
-     
-    });
+  getUsers(){
+    this.serviceUser.getUsuario().subscribe((data) =>
+    {
+        this.idUsuario = data.idUsuario;
+    })
   }
+  getMovimientos(): void{
+     this.service.getMovimientos(this.idUsuario).subscribe((data) => {
+       console.log(data);
+     });
+   }
 
 }

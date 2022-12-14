@@ -7,12 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class MibilleteraService {
 
-  private url: string = "http://localhost:3010"
+  private url: string = "https://localhost:7177/api/billetera"
   
   constructor(private http: HttpClient) { }
   
-  getMonto():Observable<any>{
-    return this.http.get(this.url + "/users");
+  getMonto(id: number):Observable<any>{
+    return this.http.get(this.url + "/" + id);
   }
 
 }

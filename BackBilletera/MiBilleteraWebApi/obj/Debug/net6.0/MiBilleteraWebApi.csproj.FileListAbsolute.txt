@@ -389,3 +389,4 @@ C:\Users\mate_\Desktop\proyects\Pil\fsnet5-team5\BackBilletera\MiBilleteraWebApi
 C:\Users\mate_\Desktop\proyects\Pil\fsnet5-team5\BackBilletera\MiBilleteraWebApi\obj\Debug\net6.0\MiBilleteraWebApi.genruntimeconfig.cache
 C:\Users\mate_\Desktop\proyects\Pil\fsnet5-team5\BackBilletera\MiBilleteraWebApi\obj\Debug\net6.0\ref\MiBilleteraWebApi.dll
 C:\Users\mate_\Desktop\proyects\Pil\fsnet5-team5\BackBilletera\MiBilleteraWebApi\bin\Debug\net6.0\jose-jwt.dll
+D:\Fonti\CURSOS Y PASANTIAS\PIL (Kinetic)\Proyecto\fsnet5-team5\BackBilletera\MiBilleteraWebApi\bin\Debug\net6.0\jose-jwt.dll

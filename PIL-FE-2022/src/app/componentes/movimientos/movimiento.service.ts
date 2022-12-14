@@ -7,12 +7,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MovimientoService {
-  private url: string = "http://localhost:3010"
+  private url: string = "https://localhost:7177/api/Operaciones"
   
   constructor(private http: HttpClient) { }
   
-  getMonto():Observable<any>{
-    return this.http.get(this.url + "/users");
+  getMovimientos(idUsuario: number):Observable<any>{
+    return this.http.get(this.url + "/" + idUsuario);
   }
 
 }

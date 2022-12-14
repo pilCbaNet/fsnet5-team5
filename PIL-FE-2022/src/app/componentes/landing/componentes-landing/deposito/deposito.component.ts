@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as historyApiFallback from 'connect-history-api-fallback';
+import { UsuarioServices } from 'src/app/componentes/usuarios.service';
 import { DepositoService } from './deposito.service';
 @Component({
   selector: 'app-deposito',
@@ -10,55 +11,25 @@ export class DepositoComponent implements OnInit {
   response: boolean = false;
   isLoading: boolean = true;
   monto: number = 0;
-  usuario: any =  localStorage.getItem("tokenPrueba") || null;
-  users: any[] = [];
-  userActual: any; 
-  movimiento: object = {};
-
-  constructor(private service: DepositoService) { }
+  idUsuario: number = 0;
+  depositoBody: object = {};
+  constructor(private service: DepositoService, private serviceUser: UsuarioServices) { }
 
   ngOnInit(): void {
-    this.getUsers();
+    this.getUser();
   }
-  getUsers(): void{
-    this.service.getUsers().subscribe((data) => {
-      this.users = data;
-      this.userActual = this.users.find((data) => this.usuario === data.email);
-    });
+  getUser(){
+    this.serviceUser.getUsuario().subscribe((data) =>
+    {
+        this.idUsuario = data.idUsuario;
+    })
   }
-  depositar() {
-    this.userActual.monto += this.monto;
-    this.agregarMovimiento();
-    try{
-      this.service.putUsers(this.userActual).subscribe((data) => {
-        this.isLoading = false;
-        this.response = true;
-        location.reload();
-      });
-    } catch {
-      this.isLoading = false;
-      this.response = false;
-    }
+  deposito()
+  {
+    this.depositoBody = {"idUsuario": this.idUsuario, "saldo": this.monto}
+    this.service.deposito(this.depositoBody).subscribe((data) => {
+      console.log(data);
+    })
   }
-  agregarMovimiento() {
-    const date = new Date();
-    const fecha = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
-    const hora = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-    
-    this.movimiento = { "monto": this.monto,
-    "fecha" : fecha,
-    "hora" : hora,
-    "moneda" : "pesos",
-    "tipo" : "deposito",
-    "email" : this.userActual.email
-    }
-    this.userActual.movimientos.push(this.movimiento);
 
-  }
-  deshabilitado(): boolean {
-    if (this.monto <= 0){
-      return false;
-    }
-    return true;
-  }
 }

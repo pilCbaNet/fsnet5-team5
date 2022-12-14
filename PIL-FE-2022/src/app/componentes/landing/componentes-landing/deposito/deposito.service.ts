@@ -5,14 +5,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DepositoService {
-private readonly url: string = "http://localhost:3010";
+private readonly url: string = "https://localhost:7177/api/billetera/Deposito";
 constructor(private http: HttpClient) { 
 }
-getUsers():Observable<any>{
-  return this.http.get(this.url + "/users");
-}
 
-putUsers(usuarioActual: any):Observable<any>{
-  return this.http.put(this.url + "/users/" + usuarioActual.id, usuarioActual);
+deposito(deposito: any):Observable<any>{
+  console.log(deposito);
+  return this.http.post(this.url, deposito);
 }
 }

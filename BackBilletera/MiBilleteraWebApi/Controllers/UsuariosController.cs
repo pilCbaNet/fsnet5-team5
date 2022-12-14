@@ -28,10 +28,14 @@ namespace MiBilleteraWebApi.Controllers
         }
 
         // GET api/<UsuarioController>/5
-        [HttpGet("{id}")]
-        public Usuario? Get(int id)
+        [HttpGet("{token}")]
+        public Usuario? Get(string token)
         {
-            return context.Usuarios.FirstOrDefault(x => x.IdUsuario == id);
+
+            var secretKey = new byte[] { 164, 60, 194, 0, 161, 189, 41, 38, 130, 89, 141, 164, 45, 170, 159, 209, 69, 137, 243, 216, 191, 131, 47, 250, 32, 107, 231, 117, 37, 158, 225, 234 };
+            string email = DesEncriptado(token, secretKey);
+
+            return context.Usuarios.FirstOrDefault(x => x.Email == email);
         }
 
         [HttpPost]
@@ -47,7 +51,13 @@ namespace MiBilleteraWebApi.Controllers
             context.SaveChanges();
             var secretKey = new byte[] { 164, 60, 194, 0, 161, 189, 41, 38, 130, 89, 141, 164, 45, 170, 159, 209, 69, 137, 243, 216, 191, 131, 47, 250, 32, 107, 231, 117, 37, 158, 225, 234 };
 
-            return Ok(Encriptado(usuario.Email, secretKey));
+            var encripto = Encriptado(usuario.Email, secretKey);
+
+            TokenJson tok = new TokenJson();
+
+            tok.token = encripto;
+
+            return Ok(tok);
         }
         // POST api/<UsuarioController>
         [HttpPost]
@@ -60,7 +70,25 @@ namespace MiBilleteraWebApi.Controllers
             }
             context.Add(usuario);
             context.SaveChanges();
-            return Ok();
+            var usuarioCreado = context.Usuarios.FirstOrDefault(x => x.Email == usuario.Email);
+            var billetera = new Billetera
+            {
+                Saldo = 0,
+                IdMoneda = 1,
+                IdUsuario = usuarioCreado.IdUsuario,
+            };
+            context.Add(billetera);
+            context.SaveChanges();
+            var secretKey = new byte[] { 164, 60, 194, 0, 161, 189, 41, 38, 130, 89, 141, 164, 45, 170, 159, 209, 69, 137, 243, 216, 191, 131, 47, 250, 32, 107, 231, 117, 37, 158, 225, 234 };
+
+            var encripto = Encriptado(usuario.Email, secretKey);
+
+            TokenJson tok = new TokenJson();
+
+            tok.token = encripto;
+
+            return Ok(tok);
+
         }
 
         [HttpPost("baja/{id:int}")]
@@ -71,13 +99,13 @@ namespace MiBilleteraWebApi.Controllers
             {
                 return NotFound();
             }
-            if(existeUsuario.FehcaBaja != null)
+            if(existeUsuario.FechaBaja != null)
             {
-                existeUsuario.FehcaBaja = null;
+                existeUsuario.FechaBaja = null;
             }
             else
             {
-                existeUsuario.FehcaBaja = DateTime.Now;
+                existeUsuario.FechaBaja = DateTime.Now;
             }
             context.SaveChanges();
             return Ok();
@@ -110,5 +138,11 @@ namespace MiBilleteraWebApi.Controllers
         {
             return Jose.JWT.Decode(encriptar, secretKey, JweAlgorithm.DIR, JweEncryption.A128CBC_HS256);
         }
+
+        public class TokenJson
+        {
+            public string token { get; set; }
+        }
+
     }
 }

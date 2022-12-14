@@ -153,9 +153,9 @@ namespace MiBilleteraWebApi.Models
                     .HasColumnName("fechaAlta")
                     .HasDefaultValueSql("(getdate())");
 
-                entity.Property(e => e.FehcaBaja)
+                entity.Property(e => e.FechaBaja)
                     .HasColumnType("datetime")
-                    .HasColumnName("fehcaBaja");
+                    .HasColumnName("fechaBaja");
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)

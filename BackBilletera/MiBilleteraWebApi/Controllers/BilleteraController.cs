@@ -17,11 +17,11 @@ namespace MiBilleteraWebApi.Controllers
             this.context = context;
         }
 
-        [HttpPost]
+        [HttpPost("Retiro")]
         public ActionResult PostRetiro(RetiroBillertera retiroBillertera)
         {
 
-            var retiro = context.Billeteras.FirstOrDefault(x => x.IdBilletera == retiroBillertera.IdBilletera);
+            var retiro = context.Billeteras.FirstOrDefault(x => x.IdUsuario == retiroBillertera.IdUsuario);
             if (retiroBillertera.Saldo == 0)
             {
                 return BadRequest("La billetera NO tiene saldo.");
@@ -32,7 +32,7 @@ namespace MiBilleteraWebApi.Controllers
 
                 retiro.Saldo = montoRetirado;
                 retiro.IdMoneda = 1;
-
+                    
 
 
                 var operaciones = new Operacion()
@@ -61,13 +61,13 @@ namespace MiBilleteraWebApi.Controllers
         }
 
 
-        [HttpPost]
-        [Route("Sumar")]
+        [HttpPost("Deposito")]
+        
         public ActionResult PostIngresar(RetiroBillertera retiroBillertera)
         {
 
 
-            var retiro = context.Billeteras.FirstOrDefault(x => x.IdBilletera == retiroBillertera.IdBilletera);
+            var retiro = context.Billeteras.FirstOrDefault(x => x.IdUsuario == retiroBillertera.IdUsuario);
             if (retiroBillertera.Saldo == 0)
             {
                 return BadRequest("La billetera NO tiene saldo.");
@@ -87,7 +87,7 @@ namespace MiBilleteraWebApi.Controllers
                     IdUsuario = retiro.IdUsuario,
                     IdBilletera = retiro.IdBilletera,
                     IdMoneda = 1,
-                    IdTipoOperacion = 4,
+                    IdTipoOperacion = 5,
 
                 };
 

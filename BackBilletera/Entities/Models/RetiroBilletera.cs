@@ -9,8 +9,10 @@ namespace Entities.Models
     public class RetiroBillertera
     {
 
-        public int IdBilletera { get; set; }
+        public int IdUsuario { get; set; }
         public decimal Saldo { get; set; }
+
+        
 
     }
 }
